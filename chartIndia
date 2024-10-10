@@ -1,10 +1,594 @@
+Ask a question
+Find an Answer
+Questions and answers about
+the economy.
+
+Chart goes here
+No previous comments
+Add a comment...
+Create
+Data
+
+India
+
+GDP per capita
+https://api.economicsobservatory.com/ind/gdpp
+
+Data
+https://api.economicsobservatory.com/ind/gdpp
+
+usa
+
+Employed
+
+Scatter
+Line
+Bar
+Area
+Variables
+
+date
+
+Type
+Label X
+
+value
+
+Type
+Label Y
+Appearance
+GDP per capita
+Size
+Colour
+2015 USD | Source: CSO (WB) through ECO API
+Size
+Colour
+
+Height
+Width
+2
+Colour
+Page
+Canvas
+RESET
+ 
+Chart
+Data
+Code
+Save
+Share
+Your visualisation:
+
+The dataset you loaded:
+
+{
+    "author": "Economics Observatory",
+    "source": "CSO",
+    "url": "https://raw.githubusercontent.com/EconomicsObservatory/api/main/cached_data/ind/gdpp.json",
+    "data": [
+        {
+            "date": "1960-01-01",
+            "value": 305.789
+        },
+        {
+            "date": "1961-01-01",
+            "value": 309.947
+        },
+        {
+            "date": "1962-01-01",
+            "value": 311.741
+        },
+        {
+            "date": "1963-01-01",
+            "value": 322.886
+        },
+        {
+            "date": "1964-01-01",
+            "value": 339.057
+        },
+        {
+            "date": "1965-01-01",
+            "value": 322.823
+        },
+        {
+            "date": "1966-01-01",
+            "value": 315.776
+        },
+        {
+            "date": "1967-01-01",
+            "value": 333.317
+        },
+        {
+            "date": "1968-01-01",
+            "value": 337.216
+        },
+        {
+            "date": "1969-01-01",
+            "value": 351.44
+        },
+        {
+            "date": "1970-01-01",
+            "value": 361.486
+        },
+        {
+            "date": "1971-01-01",
+            "value": 359.369
+        },
+        {
+            "date": "1972-01-01",
+            "value": 349.508
+        },
+        {
+            "date": "1973-01-01",
+            "value": 352.99
+        },
+        {
+            "date": "1974-01-01",
+            "value": 349.198
+        },
+        {
+            "date": "1975-01-01",
+            "value": 372.713
+        },
+        {
+            "date": "1976-01-01",
+            "value": 370.633
+        },
+        {
+            "date": "1977-01-01",
+            "value": 388.839
+        },
+        {
+            "date": "1978-01-01",
+            "value": 402.055
+        },
+        {
+            "date": "1979-01-01",
+            "value": 372.616
+        },
+        {
+            "date": "1980-01-01",
+            "value": 388.823
+        },
+        {
+            "date": "1981-01-01",
+            "value": 402.902
+        },
+        {
+            "date": "1982-01-01",
+            "value": 407.586
+        },
+        {
+            "date": "1983-01-01",
+            "value": 427.528
+        },
+        {
+            "date": "1984-01-01",
+            "value": 433.932
+        },
+        {
+            "date": "1985-01-01",
+            "value": 446.577
+        },
+        {
+            "date": "1986-01-01",
+            "value": 457.565
+        },
+        {
+            "date": "1987-01-01",
+            "value": 465.307
+        },
+        {
+            "date": "1988-01-01",
+            "value": 499.085
+        },
+        {
+            "date": "1989-01-01",
+            "value": 517.42
+        },
+        {
+            "date": "1990-01-01",
+            "value": 534.484
+        },
+        {
+            "date": "1991-01-01",
+            "value": 528.898
+        },
+        {
+            "date": "1992-01-01",
+            "value": 546.441
+        },
+        {
+            "date": "1993-01-01",
+            "value": 560.799
+        },
+        {
+            "date": "1994-01-01",
+            "value": 586.175
+        },
+        {
+            "date": "1995-01-01",
+            "value": 618.139
+        },
+        {
+            "date": "1996-01-01",
+            "value": 651.958
+        },
+        {
+            "date": "1997-01-01",
+            "value": 665.466
+        },
+        {
+            "date": "1998-01-01",
+            "value": 693.409
+        },
+        {
+            "date": "1999-01-01",
+            "value": 740.916
+        },
+        {
+            "date": "2000-01-01",
+            "value": 755.482
+        },
+        {
+            "date": "2001-01-01",
+            "value": 777.734
+        },
+        {
+            "date": "2002-01-01",
+            "value": 793.101
+        },
+        {
+            "date": "2003-01-01",
+            "value": 840.818
+        },
+        {
+            "date": "2004-01-01",
+            "value": 892.382
+        },
+        {
+            "date": "2005-01-01",
+            "value": 947.763
+        },
+        {
+            "date": "2006-01-01",
+            "value": 1008.667
+        },
+        {
+            "date": "2007-01-01",
+            "value": 1070.132
+        },
+        {
+            "date": "2008-01-01",
+            "value": 1087.583
+        },
+        {
+            "date": "2009-01-01",
+            "value": 1156.881
+        },
+        {
+            "date": "2010-01-01",
+            "value": 1238.015
+        },
+        {
+            "date": "2011-01-01",
+            "value": 1285.283
+        },
+        {
+            "date": "2012-01-01",
+            "value": 1337.476
+        },
+        {
+            "date": "2013-01-01",
+            "value": 1404.545
+        },
+        {
+            "date": "2014-01-01",
+            "value": 1490.028
+        },
+        {
+            "date": "2015-01-01",
+            "value": 1590.174
+        },
+        {
+            "date": "2016-01-01",
+            "value": 1701.184
+        },
+        {
+            "date": "2017-01-01",
+            "value": 1795.912
+        },
+        {
+            "date": "2018-01-01",
+            "value": 1891.138
+        },
+        {
+            "date": "2019-01-01",
+            "value": 1944.315
+        },
+        {
+            "date": "2020-01-01",
+            "value": 1813.535
+        },
+        {
+            "date": "2021-01-01",
+            "value": 1961.961
+        },
+        {
+            "date": "2022-01-01",
+            "value": 2085.121
+        }
+    ],
+    "title": "GDP per capita",
+    "subtitle": "2015 USD | Source: CSO (WB) through ECO API",
+    "description": "GDP per capita (2015 US$)",
+    "units": null,
+    "raw": [
+        {
+            "date": "1960-01-01",
+            "value": 305.789
+        },
+        {
+            "date": "1961-01-01",
+            "value": 309.947
+        },
+        {
+            "date": "1962-01-01",
+            "value": 311.741
+        },
+        {
+            "date": "1963-01-01",
+            "value": 322.886
+        },
+        {
+            "date": "1964-01-01",
+            "value": 339.057
+        },
+        {
+            "date": "1965-01-01",
+            "value": 322.823
+        },
+        {
+            "date": "1966-01-01",
+            "value": 315.776
+        },
+        {
+            "date": "1967-01-01",
+            "value": 333.317
+        },
+        {
+            "date": "1968-01-01",
+            "value": 337.216
+        },
+        {
+            "date": "1969-01-01",
+            "value": 351.44
+        },
+        {
+            "date": "1970-01-01",
+            "value": 361.486
+        },
+        {
+            "date": "1971-01-01",
+            "value": 359.369
+        },
+        {
+            "date": "1972-01-01",
+            "value": 349.508
+        },
+        {
+            "date": "1973-01-01",
+            "value": 352.99
+        },
+        {
+            "date": "1974-01-01",
+            "value": 349.198
+        },
+        {
+            "date": "1975-01-01",
+            "value": 372.713
+        },
+        {
+            "date": "1976-01-01",
+            "value": 370.633
+        },
+        {
+            "date": "1977-01-01",
+            "value": 388.839
+        },
+        {
+            "date": "1978-01-01",
+            "value": 402.055
+        },
+        {
+            "date": "1979-01-01",
+            "value": 372.616
+        },
+        {
+            "date": "1980-01-01",
+            "value": 388.823
+        },
+        {
+            "date": "1981-01-01",
+            "value": 402.902
+        },
+        {
+            "date": "1982-01-01",
+            "value": 407.586
+        },
+        {
+            "date": "1983-01-01",
+            "value": 427.528
+        },
+        {
+            "date": "1984-01-01",
+            "value": 433.932
+        },
+        {
+            "date": "1985-01-01",
+            "value": 446.577
+        },
+        {
+            "date": "1986-01-01",
+            "value": 457.565
+        },
+        {
+            "date": "1987-01-01",
+            "value": 465.307
+        },
+        {
+            "date": "1988-01-01",
+            "value": 499.085
+        },
+        {
+            "date": "1989-01-01",
+            "value": 517.42
+        },
+        {
+            "date": "1990-01-01",
+            "value": 534.484
+        },
+        {
+            "date": "1991-01-01",
+            "value": 528.898
+        },
+        {
+            "date": "1992-01-01",
+            "value": 546.441
+        },
+        {
+            "date": "1993-01-01",
+            "value": 560.799
+        },
+        {
+            "date": "1994-01-01",
+            "value": 586.175
+        },
+        {
+            "date": "1995-01-01",
+            "value": 618.139
+        },
+        {
+            "date": "1996-01-01",
+            "value": 651.958
+        },
+        {
+            "date": "1997-01-01",
+            "value": 665.466
+        },
+        {
+            "date": "1998-01-01",
+            "value": 693.409
+        },
+        {
+            "date": "1999-01-01",
+            "value": 740.916
+        },
+        {
+            "date": "2000-01-01",
+            "value": 755.482
+        },
+        {
+            "date": "2001-01-01",
+            "value": 777.734
+        },
+        {
+            "date": "2002-01-01",
+            "value": 793.101
+        },
+        {
+            "date": "2003-01-01",
+            "value": 840.818
+        },
+        {
+            "date": "2004-01-01",
+            "value": 892.382
+        },
+        {
+            "date": "2005-01-01",
+            "value": 947.763
+        },
+        {
+            "date": "2006-01-01",
+            "value": 1008.667
+        },
+        {
+            "date": "2007-01-01",
+            "value": 1070.132
+        },
+        {
+            "date": "2008-01-01",
+            "value": 1087.583
+        },
+        {
+            "date": "2009-01-01",
+            "value": 1156.881
+        },
+        {
+            "date": "2010-01-01",
+            "value": 1238.015
+        },
+        {
+            "date": "2011-01-01",
+            "value": 1285.283
+        },
+        {
+            "date": "2012-01-01",
+            "value": 1337.476
+        },
+        {
+            "date": "2013-01-01",
+            "value": 1404.545
+        },
+        {
+            "date": "2014-01-01",
+            "value": 1490.028
+        },
+        {
+            "date": "2015-01-01",
+            "value": 1590.174
+        },
+        {
+            "date": "2016-01-01",
+            "value": 1701.184
+        },
+        {
+            "date": "2017-01-01",
+            "value": 1795.912
+        },
+        {
+            "date": "2018-01-01",
+            "value": 1891.138
+        },
+        {
+            "date": "2019-01-01",
+            "value": 1944.315
+        },
+        {
+            "date": "2020-01-01",
+            "value": 1813.535
+        },
+        {
+            "date": "2021-01-01",
+            "value": 1961.961
+        },
+        {
+            "date": "2022-01-01",
+            "value": 2085.121
+        }
+    ]
+}
+Download
+Your chart code in JSON format:
+
+Edit Code
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "India's GDP per capita",
+    "text": "GDP per capita",
     "anchor": "start",
     "subtitle": "2015 USD | Source: CSO (WB) through ECO API",
-    "fontSize": "16",
+    "fontSize": "14",
     "subtitleFontSize": "12",
     "color": "#000000",
     "subtitleColor": "#000000"
@@ -28,7 +612,7 @@
   },
   "mark": {
     "type": "line",
-    "color": "#4413f4",
+    "color": "#f4134d",
     "strokeWidth": "2"
   },
   "encoding": {
@@ -52,3 +636,15 @@
     }
   }
 }
+Description
+About your chart...
+Select tags
+Funded By
+Funded By
+Contributing organisations
+Creative Commons License
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+Privacy Policy & Terms and Conditions
+
+Web Design Grizzly
