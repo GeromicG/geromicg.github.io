@@ -21,7 +21,7 @@
     "strokeOpacity": 0
   },
   "data": {
-    "url": "https://api.economicsobservatory.com/ind/gdpp?vega"
+    "url": "https://api.economicsobservatory.com/ind/gdpp?vega",
     "format": {
       "type": "json"
     }
