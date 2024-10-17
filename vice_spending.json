@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
  "data":{
-  "url":"https://raw.githubusercontent.com/aysualiyevaa/aysualiyevaa.github.io/refs/heads/main/data_working.csv",
+  "url":"https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/vice_spending.csv",
   "format": {
     "type": "dsv",
     "delimiter": ";"
