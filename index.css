@@ -65,3 +65,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+figure {
+  margin-top: 60px;
+  margin-bottom: 1px;
+  text-align: center; /* Centers the content inside the figure */
+}
+figcaption {
+  margin-top: 1px; /* Adds some space between the image and caption */
+  font-style: italic; /* Makes the caption italic */
+}
