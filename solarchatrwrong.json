@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {"date": 2015, "value": 507},
+      {"date": 2016, "value": 1500}
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "width": 40
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "ordinal",
+      "title": "Date",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Value",
+      "scale": {"domainMin": 300}
+    },
+    "color": {
+      "field": "date",
+      "type": "nominal",
+      "scale": {
+        "domain": [2015, 2016],
+        "range": ["blue", "red"]
+      },
+      "legend": null
+    }
+  },
+  "config": {
+    "view": {"step": 80}  // This sets space between bars
+  }
+}
