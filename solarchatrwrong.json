@@ -6,34 +6,37 @@
       {"date": 2016, "value": 1500}
     ]
   },
-  "mark": {
-    "type": "bar",
-    "width": 40
-  },
-  "encoding": {
-    "x": {
-      "field": "date",
-      "type": "ordinal",
-      "title": "Date",
-      "axis": {"labelAngle": 0}
-    },
-    "y": {
-      "field": "value",
-      "type": "quantitative",
-      "title": "Value",
-      "scale": {"domainMin": 300}
-    },
-    "color": {
-      "field": "date",
-      "type": "nominal",
-      "scale": {
-        "domain": [2015, 2016],
-        "range": ["blue", "red"]
+  "width": "container",
+  "height": 300,
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "color": "blue",
+        "xOffset": -20,
+        "width": 100  
       },
-      "legend": null
+      "transform": [{"filter": "datum.date == 2015"}],
+      "encoding": {
+        "x": {"field": "date", "type": "ordinal", "title": ""},
+        "y": {"field": "value", "type": "quantitative", "title": "Value", "scale": {"domainMin": 300}}
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "color": "red",
+        "xOffset": 20,
+        "width": 100  
+      },
+      "transform": [{"filter": "datum.date == 2016"}],
+      "encoding": {
+        "x": {"field": "date", "type": "ordinal", "title": ""},
+        "y": {"field": "value", "type": "quantitative"}
+      }
     }
-  },
+  ],
   "config": {
-    "view": {"step": 80}  
+    "scale": {"barPaddingInner": 0.5}
   }
 }
