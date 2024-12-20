@@ -1,20 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "India's labor force participation rate",
+    "text": "India's Labor Force Participation Rate",
     "subtitle": "Percentage of male and female population ages 15+"
   },
   "width": 700,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/India_lfpr.csv",
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/India_lfpr1.csv",
     "format": {"type": "csv"}
   },
   "mark": {
     "type": "line",
-    "point": false,
-    "strokeWidth": 2,
-    "interpolate": "monotone"
+    "point": true
   },
   "encoding": {
     "x": {
@@ -22,46 +20,42 @@
       "type": "temporal",
       "axis": {
         "format": "%Y",
-        "values": ["1991", "2001", "2011", "2021"],
-        "title": null
+        "title": "Year"
       }
     },
     "y": {
       "field": "value",
       "type": "quantitative",
       "axis": {
-        "values": [0, 0.25, 0.50, 0.75],
-        "title": null,
-        "format": "%",
-        "labelFormat": "%"
-      },
-   },
+        "values": [0, 20, 40, 60, 80, 100],
+        "title": "Labor Force Participation Rate (%)",
+        "format": ".0f",
+        "labelExpr": "datum.value + '%'"
+      }
+    },
     "color": {
       "field": "series",
       "type": "nominal",
+      "title": null,
       "scale": {
         "domain": ["mlfpr", "wlfpr"],
-        "range": ["#1f77b4", "#9b0000"],
-        "labels": ["Male", "Female"]
+        "range": ["#1f77b4", "#9b0000"]
+      },
+      "legend": {
+        "orient": "top-right",
+        "labelExpr": "datum.label === 'mlfpr' ? 'Male LFPR' : 'Female LFPR'"
       }
-    }
+    },
+    "tooltip": [
+      {"field": "date", "type": "temporal", "title": "Year", "format": "%Y"},
+      {"field": "value", "type": "quantitative", "title": "LFPR", "format": ".1f"},
+      {"field": "series", "type": "nominal", "title": "Gender"}
+    ]
   },
   "config": {
     "axis": {
-      "grid": false,
+      "grid": true,
       "gridColor": "#f0f0f0"
-    },
-    "title": {
-      "fontSize": 18,
-      "font": "Arial",
-      "anchor": "start",
-      "color": "#333333"
-    },
-    "subtitle": {
-      "fontSize": 15,
-      "font": "Arial",
-      "anchor": "start", 
-      "color": "#333333"
     }
   }
 }
