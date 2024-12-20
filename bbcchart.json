@@ -34,15 +34,18 @@
         "title": null,
         "format": "%",
         "labelFormat": "%"
-      },
-   },
+      }
+    },
     "color": {
       "field": "series",
       "type": "nominal",
       "scale": {
         "domain": ["mlfpr", "wlfpr"],
-        "range": ["#1f77b4", "#9b0000"],
-        "labels": ["Male", "Female"]
+        "range": ["#1f77b4", "#9b0000"]
+      },
+      "legend": {
+        "title": "Gender",
+        "labelExpr": "datum.value === 'mlfpr' ? 'Male' : 'Female'"
       }
     }
   },
@@ -60,7 +63,7 @@
     "subtitle": {
       "fontSize": 15,
       "font": "Arial",
-      "anchor": "start", 
+      "anchor": "start",
       "color": "#333333"
     }
   }
