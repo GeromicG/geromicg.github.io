@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "India's labor force participation rate",
+    "subtitle": "Percentage of male and female population ages 15+"
+  },
+  "width": 700,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/India_lfpr.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": {
+    "type": "line",
+    "point": false,
+    "strokeWidth": 2,
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis": {
+        "format": "%Y",
+        "values": ["1991", "2001", "2011", "2021"],
+        "title": null
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {
+        "values": [0, 0.25, 0.50, 0.75],
+        "title": null,
+        "format": "%",
+        "labelFormat": "%"
+      },
+   },
+    "color": {
+      "field": "series",
+      "type": "nominal",
+      "scale": {
+        "domain": ["mlfpr", "wlfpr"],
+        "range": ["#1f77b4", "#9b0000"],
+        "labels": ["Male", "Female"]
+      }
+    }
+  },
+  "config": {
+    "axis": {
+      "grid": false,
+      "gridColor": "#f0f0f0"
+    },
+    "title": {
+      "fontSize": 18,
+      "font": "Arial",
+      "anchor": "start",
+      "color": "#333333"
+    },
+    "subtitle": {
+      "fontSize": 15,
+      "font": "Arial",
+      "anchor": "start", 
+      "color": "#333333"
+    }
+  }
+}
