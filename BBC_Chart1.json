@@ -54,7 +54,7 @@
   },
   "config": {
     "axis": {
-      "grid": true,
+      "grid": false,
       "gridColor": "#f0f0f0"
     }
   }
