@@ -6,10 +6,15 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/India_states.json",
-        "format": {"type": "topojson", "feature": "states"}
+        "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/main/India_states.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
       },
-      "projection": {"type": "mercator"},
+      "projection": {
+        "type": "mercator"
+      },
       "mark": {
         "type": "geoshape",
         "fill": "#eee",
