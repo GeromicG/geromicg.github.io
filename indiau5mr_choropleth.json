@@ -3,7 +3,6 @@
   "description": "Map of Indian states showing mortality rates",
   "width": 800,
   "height": 600,
-  "title": "Under-5 Mortality Rate by State in India",
   "layer": [
     {
       "data": {
