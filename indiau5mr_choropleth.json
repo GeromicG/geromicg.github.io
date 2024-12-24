@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Map of Indian states showing mortality rates",
   "width": 800,
-  "height": 500,
+  "height": 600,
   "title": "Under-5 Mortality Rate by State in India",
   "layer": [
     {
