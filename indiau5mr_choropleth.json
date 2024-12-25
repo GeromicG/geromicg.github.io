@@ -3,6 +3,14 @@
   "description": "Map of Indian states showing mortality rates",
   "width": 800,
   "height": 600,
+  "title": {
+    "text": "Under Five Mortality in India",
+    "subtitle": ["Source: NFHS 4"],
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "subtitleFontWeight": "lighter",
+    "anchor": "middle"
+  },
   "layer": [
     {
       "data": {
