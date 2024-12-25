@@ -10,48 +10,106 @@
     "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/India_lfpr1.csv",
     "format": {"type": "csv"}
   },
-  "mark": {
-    "type": "line",
-    "point": true
-  },
-  "encoding": {
-    "x": {
-      "field": "date",
-      "type": "temporal",
-      "axis": {
-        "format": "%Y",
-        "title": "Year"
+  "layer": [
+    {
+      "transform": [
+        {
+          "pivot": "series",
+          "value": "value",
+          "groupby": ["date"]
+        },
+        {
+          "calculate": "datum.mlfpr - datum.wlfpr",
+          "as": "gender_gap"
+        }
+      ],
+      "params": [{
+        "name": "hover",
+        "select": {
+          "type": "point",
+          "on": "mouseover",
+          "nearest": true,
+          "fields": ["date"]
+        }
+      }],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "wlfpr",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "mlfpr"
+        },
+        "color": {
+          "condition": {
+            "param": "hover",
+            "value": "#a0a0a0"
+          },
+          "value": "#e0e0e0"
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "value": 0.8
+          },
+          "value": 0.5
+        },
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Year", "format": "%Y"},
+          {"field": "gender_gap", "type": "quantitative", "title": "Gender Gap", "format": ".1f"}
+        ]
       }
     },
-    "y": {
-      "field": "value",
-      "type": "quantitative",
-      "axis": {
-        "values": [0, 20, 40, 60, 80, 100],
-        "title": "Labor Force Participation Rate (%)",
-        "format": ".0f",
-        "labelExpr": "datum.value + '%'"
-      }
-    },
-    "color": {
-      "field": "series",
-      "type": "nominal",
-      "title": null,
-      "scale": {
-        "domain": ["mlfpr", "wlfpr"],
-        "range": ["#1f77b4", "#9b0000"]
+    {
+      "mark": {
+        "type": "line",
+        "point": true
       },
-      "legend": {
-        "orient": "top-right",
-        "labelExpr": "datum.label === 'mlfpr' ? 'Male LFPR' : 'Female LFPR'"
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "axis": {
+            "format": "%Y",
+            "title": "Year"
+          }
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": {
+            "values": [0, 20, 40, 60, 80, 100],
+            "title": "Labor Force Participation Rate (%)",
+            "format": ".0f",
+            "labelExpr": "datum.value + '%'"
+          }
+        },
+        "color": {
+          "field": "series",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": ["mlfpr", "wlfpr"],
+            "range": ["#1f77b4", "#9b0000"]
+          },
+          "legend": {
+            "orient": "top-right",
+            "labelExpr": "datum.label === 'mlfpr' ? 'Male LFPR' : 'Female LFPR'"
+          }
+        },
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Year", "format": "%Y"},
+          {"field": "value", "type": "quantitative", "title": "LFPR", "format": ".1f"},
+          {"field": "series", "type": "nominal", "title": "Gender"}
+        ]
       }
-    },
-    "tooltip": [
-      {"field": "date", "type": "temporal", "title": "Year", "format": "%Y"},
-      {"field": "value", "type": "quantitative", "title": "LFPR", "format": ".1f"},
-      {"field": "series", "type": "nominal", "title": "Gender"}
-    ]
-  },
+    }
+  ],
   "config": {
     "axis": {
       "grid": false,
