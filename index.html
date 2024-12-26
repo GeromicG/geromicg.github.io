@@ -1,206 +1,51 @@
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
-
 <!DOCTYPE html>
-<html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
-
-<head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
-
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
-
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-    <style>
-        #chartGrid {
-            display: flex;
-        }
-        
-    </style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="indexstyle.css">
+    <title>Modern Homepage</title>
 </head>
+<body>
+    <header>
+        <h1>Geromic George</h1>
+        <p>
+            <a href="https://geromic.medium.com">Medium</a> |
+            <a href="https://www.linkedin.com/in/geromic-george-62955b33">LinkedIn</a> |
+            <a href="https://github.com/GeromicG">GitHub</a> |
+            <a href="portfolio.html">Portfolio</a> |
+            <a href="project.html">Project</a> |
+            <a href="CV.html">CV</a>
+        </p>
+    </header>
 
-<body> 
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Geromic George - Portfolio Page
-    </h1>
-    <p style="margin-top: 0px; color: darkblue">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        Geromic George | <a href="https://www.linkedin.com/in/geromic-george-62955b33">LinkedIn</a> | <a
-            href="https://github.com/GeromicG">GitHub</a>| <a href="portfolio.html">Portfolio</a>|<a href="project.html">Project</a>
-    </p>
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page acts as my portfolio of charts for the PP434: Automated Data Visualisation for Policymaking course. 
-        I am a MPP candidate at LSE who wishes to learn data visualisation skills to communicate effectively to policy makers.
-        Welcome to my page!  
-    </h3>
-
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
-    <section>
-        <div class="chart-description">
-            <h2>Coding Challenge 1: Hosting (WEEK 1)</h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               A new portfolio page was created on GitHub and two charts have been displayed for this coding challenge.
+    <div class="carousel">
+        <button class="carousel-prev" aria-label="Previous">&#9664;</button>
+        <img src="https://via.placeholder.com/400x200" alt="Carousel Image">
+        <img src="Screenshot-2024-11-14-233000.png" alt="Carousel Image">
+        <button class="carousel-next" aria-label="Next">&#9654;</button>
+    </div>
+    
+    <section class="about">
+        <img src="Screenshot 2024-11-14 233000.png" alt="Profile Picture">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                As a senior civil servant belonging to the Indian Administrative Service, I have worked for the last nine years across numerous government departments including major infrastructure sectors like ports to regulatory departments like land revenue in the state of Kerala. 
+                My field assignments include a training stint as Assistant Collector in Kannur, where I implemented IT projects to enhance e-governance, and two years as Sub Collector in Ottapalam, focusing on tribal land rights and social development. I served as the District Collector of Thiruvananthapuram, becoming one of the youngest to hold the position, during which I received the Best District Collector Award twice and the Best District Electoral Officer award. 
+            </p>
+            <p>
+                In the capacity of the Head of the Department, I have worked as Director Sports and Youth Affairs, CEO Kerala Maritime Board, Director Kerala Youth Leadership Academy, Secretary State Land Board, Joint Commissioner Land Revenue, and Director Backward Classes Development Department, with the key responsibility for the design and implementation of various schemes and policies for the development of the concerned sector. I am an economist by training with academic interest in public finance, environment and tech.
+            </p>
+            <p>
+                Currently, I am a Chevening Scholar in the MPP programme (2024/25) at LSE’s School of Public Policy and hope to learn evidence-based policy-making skills as well as technical skills like data visualization. Besides work, I love science fiction and watching football. I am a keen quizzer and an occasional writer and painter.
             </p>
         </div>
-        <figure id="Location1"></figure>
-        <figcaption>Chart 1:Relationship between GDP and Life Expectancy (WEEK 1)</figcaption> 
-        <figure id="Location2"></figure>
-        <figcaption>Chart 2: Relationship Between Ethereum Price and Volume (WEEK 1)</figcaption> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed --><!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
-    <!-- Do you want to add more sections? -->
-        <!-- Try copying pasting the section above -->
-        <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
-
-                <section>
-            <div class="chart-description">
-                <h2>Coding Challenge 2: Building (WEEK 2)</h2>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    Visualizations have been created for this coding challenge. Three different charts have been created and they have been displayed.
-                
-                </p>
-            </div>
-            <figure id="Location3"></figure>
-            <figcaption>Chart 3:Depiction of Inflation Movement across the 19th and 20th century (WEEK 2)</figcaption> 
-            <figure id="Location4"></figure>
-            <figcaption>Chart 4: Depiction of India's GDP per capita Growth (WEEK 2)</figcaption>
-            <figure id="Location5"></figure>
-            <figcaption>Chart 5: Depiction of UK Consumer Spending on Vices (WEEK 2)</figcaption>
-        </section>
-
-        <section>
-            <div class="chart-description">
-                <h2>Coding Challenge 3:Debating (WEEK 3) </h2>
-                <h3>Debating Inequality in the UK</h3>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Gini coefficient indicator depicts income inequality. Chart A shows that the trend has larely remained stable since 2008. But there has been a slight increase in the Gini coeefficient for all individuals(1.9 points) and retired individuals(3.9 points) in a ten year period from 2011/12 to 2021/22.
-                Chart B shows that UK's Gini coefficient is one of the highest among the OECD countries and requires policy intervention.     
-                </p>
-            </div>
-            <figure id="Location6"></figure>
-            <figcaption>Chart A: Gini Coefficient Trend for disposable income by household type, UK, 1977 to financial year ending 2022 Source:ONS (WEEK 3) </figcaption>
-            <figure id="Location7"></figure>
-            <figcaption>Chart B: Gini Coefficient for OECD Countries -UK has the 8th highest Gini Coefficient Source:OECD (WEEK 3)</figcaption> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-        </section>
-
-            <section>
-            <div class="chart-description">
-                <h2>Coding Challenge 4: Replication. (WEEK 4) </h2>
-                <p> India's labour force particpation rate - male and female for 15 years+ has been depicted showing the wide disparity between the two in a BBC article titled - "India's economy: The good, bad and ugly in six charts".</p>
-                <img src="India_ParticipationRate_BBC_Chart.png" alt="BBC Chart with visualization of India's Labour Force Participation Rate"> 
-                 <a href="https://www.bbc.co.uk/news/world-asia-india-68823827">Source: BBC News article published on 1st May, 2024- "India's economy: The good, bad and ugly in six charts."</a>
-              </div>
-            <figure id="Location8"></figure>
-            <figcaption>Chart A: Replicated Chart visualizing India's labour force participation rate. (WEEK 4) </figcaption>
-              <p> It can be observed here that while the chart depicts the two labour force participation rates (male & female) in a simple line chart the quantum of difference is not clear. </p>
-            <br>
-            <figure id="Location9"></figure>
-            <figcaption>Chart B: Improved line chart with stroked point markers visualizing the disparity in India's labour force participation rate - male and female. (WEEK 4)  </figcaption> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-        </section>
-
-    <section>
-            <div class="chart-description">
-                <h2>Coding Challenge 5: Scraper (WEEK 5) </h2>
-                <h3>Debating Inequality in the UK</h3>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Gini coefficient indicator depicts income inequality. Chart A shows that the trend has larely remained stable since 2008. But there has been a slight increase in the Gini coeefficient for all individuals(1.9 points) and retired individuals(3.9 points) in a ten year period from 2011/12 to 2021/22.
-                Chart B shows that UK's Gini coefficient is one of the highest among the OECD countries and requires policy intervention.     
-                </p>
-            </div>
-            <figure id="Location10"></figure>
-            <figcaption>Chart A: Gini Coefficient Trend for disposable income by household type, UK, 1977 to financial year ending 2022 Source:ONS (WEEK 3) </figcaption>
-            <figure id="Location11"></figure>
-            <figcaption>Chart B: Gini Coefficient for OECD Countries -UK has the 8th highest Gini Coefficient Source:OECD (WEEK 3)</figcaption> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-        </section>
-
-    <section>
-            <div class="chart-description">
-                <h2>Coding Challenge 7: Maps (WEEK 7) </h2>
-                <h3>Child Mortality Rates in India</h3>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Under-five mortality (U5MR) is defined as the number of deaths per 1000 live births for children less than 5 years old. Chart A shows the base map of India with the states. Using data from the National Family Health Survey 4 (2019-20), Chart B shows the wide variations in under-five mortality rates across different states with southern states like Kerala having lower mortality rates while northern states such as Uttar Pradesh and Bihar having above national average mortality requiring greater focus and policy intervention.     
-                </p>
-            </div>
-            <figure id="Location12"></figure>
-            <figcaption>Map 1: A base map of India with names of states visible via tooltip and coloured in light-grey. (WEEK 7) </figcaption>
-            <figure id="Location13"></figure>
-            <figcaption>Map 2. A choropleth map of India showing under-five mortality rates for children (U5MR) state-wise for 2019-20 with tooltip. This is also used in the Project. (WEEK 7)</figcaption> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-        </section>
-
-    <section>
-            <div class="chart-description">
-                <h2>Coding Challenge 10: Interactive Visualisations (WEEK 10) </h2>
-                <h3>Debating Inequality in the UK</h3>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Gini coefficient indicator depicts income inequality. Chart A shows that the trend has larely remained stable since 2008. But there has been a slight increase in the Gini coeefficient for all individuals(1.9 points) and retired individuals(3.9 points) in a ten year period from 2011/12 to 2021/22.
-                Chart B shows that UK's Gini coefficient is one of the highest among the OECD countries and requires policy intervention.     
-                </p>
-            </div>
-            <figure id="Location14"></figure>
-            <figcaption>Chart A: Gini Coefficient Trend for disposable income by household type, UK, 1977 to financial year ending 2022 Source:ONS (WEEK 3) </figcaption>
-            <figure id="Location15"></figure>
-            <figcaption>Chart B: Gini Coefficient for OECD Countries -UK has the 8th highest Gini Coefficient Source:OECD (WEEK 3)</figcaption> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-        </section>
-<!-- This is a script, it's a way to run JavaScript code on the page -->
-    <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_2_spec="chart3.json" 
-        let figure_3_spec="chart4.json"                                                                                                       
-        let figure_4_spec="chart5.json"                                                                                                        
-        let figure_5_spec="vice_spending.json"
-        let figure_6_spec="household_gini_uk.json"
-        let figure_7_spec="Gini_OECD.json"
-        let figure_8_spec="bbcchart.json"
-        let figure_9_spec="BBC_Chart1.json"
-        let figure_10_spec="BBC_Chart1.json"
-        let figure_11_spec="BBC_Chart1.json"
-        let figure_12_spec="India_basemap.json" 
-        let figure_13_spec="indiau5mr_choropleth.json" 
-        let figure_14_spec="BBC_Chart1.json" 
-        let figure_15_spec="BBC_Chart1.json" 
-    
-        vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1 
-        vegaEmbed('#Location2', figure_2_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_2
-        vegaEmbed('#Location3', figure_3_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_3
-        vegaEmbed('#Location4', figure_4_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_4
-        vegaEmbed('#Location5', figure_5_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_5
-        vegaEmbed('#Location6', figure_6_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_6
-        vegaEmbed('#Location7', figure_7_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_7
-        vegaEmbed('#Location8', figure_8_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_8
-        vegaEmbed('#Location9', figure_9_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_9
-        vegaEmbed('#Location10', figure_10_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_10
-        vegaEmbed('#Location11', figure_11_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_11
-        vegaEmbed('#Location12', figure_12_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_11 
-        vegaEmbed('#Location13', figure_13_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_11 
-        vegaEmbed('#Location14', figure_14_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_11 
-        vegaEmbed('#Location15', figure_15_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_11 
-    </script>
-
+    <footer>
+        <p>&copy; 2024 Geromic George | All Rights Reserved</p>
+        <p><a href="contact.html">Contact Me</a></p>
+    </footer>
 </body>
-    
 </html>
