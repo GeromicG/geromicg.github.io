@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 450,
+  "title": {
+    "text": "Growth of India's Unified Payment Interface (UPI)",
+    "font": "Arial, sans-serif",
+    "fontSize": 20,
+    "align": "left",
+    "anchor": "start",
+    "baseline": "top",
+    "color": "#333"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/upi_data.csv"
+  },
+  "config": {
+    "axis": {
+      "grid": false,
+      "titleFont": "Arial, sans-serif",
+      "titleFontWeight": "bold"
+    }
+  },
+  "mark": {
+    "type": "line",
+    "point": true,
+    "strokeWidth": 3,
+    "halo": {"size": 4},
+    "interpolate": "monotone",
+    "color": "#006400"
+  },
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": "Year"},
+    "y": {
+      "field": "Transaction Volume (in mn)",
+      "type": "quantitative",
+      "title": "Transaction Volume (in mn)"
+    },
+    "tooltip": [
+      {"field": "Year", "type": "temporal"},
+      {"field": "Transaction Volume (in mn)", "type": "quantitative"}
+    ]
+  },
+  "layer": [
+    {"mark": {"type": "area", "opacity": 0.3, "color": "#004400"}},
+    {"mark": {"type": "line", "point": true, "color": "#006400"}}
+  ]
+}
