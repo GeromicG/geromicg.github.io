@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 450,
+  "title": {
+    "text": "Growth of India's Unified Payment Interface (UPI)",
+    "font": "Arial, sans-serif",
+    "fontSize": 20,
+    "align": "left",
+    "anchor": "start",
+    "baseline": "top",
+    "color": "#333"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/upi_data.csv"
+  },
+  "config": {"axis": {"grid": false}},
+  "params": [
+    {
+      "name": "yAxis",
+      "value": "USD value (in bn)",
+      "bind": {
+        "input": "select",
+        "options": [
+          "USD value (in bn)",
+          "Transaction Volume (in mn)"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {"calculate": "datum['USD value (in bn)']", "as": "USDValue"},
+    {"calculate": "datum['Transaction Volume (in mn)']", "as": "TransactionVolume"}
+  ],
+  "mark": {
+    "type": "line",
+    "point": true,
+    "strokeWidth": 3,
+    "halo": {"size": 4},
+    "interpolate": "monotone",
+    "color": "#00aaff"
+  },
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": "Year"},
+    "y": {
+      "field": {"expr": "yAxis === 'USD value (in bn)' ? 'USDValue' : 'TransactionVolume'"},
+      "type": "quantitative",
+      "title": {"expr": "yAxis"}
+    },
+    "tooltip": [
+      {"field": "Year", "type": "temporal"},
+      {"field": "USD value (in bn)", "type": "quantitative"},
+      {"field": "Transaction Volume (in mn)", "type": "quantitative"}
+    ]
+  },
+  "layer": [
+    {"mark": {"type": "area", "opacity": 0.3, "color": "#002fa7"}},
+    {"mark": {"type": "line", "point": true, "color": "#00aaff"}}
+  ]
+}
