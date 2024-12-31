@@ -14,24 +14,13 @@
   "data": {
     "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/upi_data.csv"
   },
-  "config": {"axis": {"grid": false}},
-  "params": [
-    {
-      "name": "yAxis",
-      "value": "USD value (in bn)",
-      "bind": {
-        "input": "select",
-        "options": [
-          "USD value (in bn)",
-          "Transaction Volume (in mn)"
-        ]
-      }
+  "config": {
+    "axis": {
+      "grid": false,
+      "titleFont": "Arial, sans-serif",
+      "titleFontWeight": "bold"
     }
-  ],
-  "transform": [
-    {"calculate": "datum['USD value (in bn)']", "as": "USDValue"},
-    {"calculate": "datum['Transaction Volume (in mn)']", "as": "TransactionVolume"}
-  ],
+  },
   "mark": {
     "type": "line",
     "point": true,
@@ -43,14 +32,13 @@
   "encoding": {
     "x": {"field": "Year", "type": "temporal", "title": "Year"},
     "y": {
-      "field": {"expr": "yAxis === 'USD value (in bn)' ? 'USDValue' : 'TransactionVolume'"},
+      "field": "USD value (in bn)",
       "type": "quantitative",
-      "title": {"expr": "yAxis"}
+      "title": "USD value (in bn)"
     },
     "tooltip": [
       {"field": "Year", "type": "temporal"},
-      {"field": "USD value (in bn)", "type": "quantitative"},
-      {"field": "Transaction Volume (in mn)", "type": "quantitative"}
+      {"field": "USD value (in bn)", "type": "quantitative"}
     ]
   },
   "layer": [
