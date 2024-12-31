@@ -87,16 +87,16 @@
     <section>
             <div class="chart-description">
                 <h2>Coding Challenge 5: Scraper (WEEK 5) </h2>
-                <h3>Debating Inequality in the UK</h3>
-                <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Gini coefficient indicator depicts income inequality. Chart A shows that the trend has larely remained stable since 2008. But there has been a slight increase in the Gini coeefficient for all individuals(1.9 points) and retired individuals(3.9 points) in a ten year period from 2011/12 to 2021/22.
-                Chart B shows that UK's Gini coefficient is one of the highest among the OECD countries and requires policy intervention.     
+                <h3>India's Digital Payment Revolution - Unified Payment Interface</h3>
+                <p>
+               Unified Payments Interface (UPI) is an instant payment system developed in India that powers multiple bank accounts into a single mobile application interface that facilitates inter-bank peer-to-peer (P2P) and person-to-merchant (P2M) transactions. It's usage has exploded in recent years driven by increased smartphone usage and internet penetration. The data for this has been scraped from the Wikipedia page on <a href="https://en.wikipedia.org/wiki/Unified_Payments_Interface>Unified Payment Interface</a>. The python code used for scraping is <a href="https://colab.research.google.com/drive/1b8mU6hUhX7MvCyBtwWmgpiL_LjHnO8VD?usp=sharing>Google Colab Scraping Notebook</a>.
+              It also caters to the “Peer to Peer” collect request which can be scheduled and paid as per requirement and convenience.    
                 </p>
             </div>
             <center><figure id="Location10"></figure></center>
-            <figcaption>Chart A: Gini Coefficient Trend for disposable income by household type, UK, 1977 to financial year ending 2022 Source:ONS (WEEK 3) </figcaption>
+            <figcaption>Chart A: Growth in Value of Transactions on UPI </figcaption>
             <center><figure id="Location11"></figure></center>
-            <figcaption>Chart B: Gini Coefficient for OECD Countries -UK has the 8th highest Gini Coefficient Source:OECD (WEEK 3)</figcaption> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+            <figcaption>Chart B: Growth in Number of Transactions</figcaption> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
         </section>
 
     <section>
@@ -139,7 +139,7 @@
         let figure_7_spec="Gini_OECD.json"
         let figure_8_spec="bbcchart.json"
         let figure_9_spec="BBC_Chart1.json"
-        let figure_10_spec="BBC_Chart1.json"
+        let figure_10_spec="upi_scraped.json"
         let figure_11_spec="BBC_Chart1.json"
         let figure_12_spec="India_basemap.json" 
         let figure_13_spec="indiau5mr_choropleth.json" 
