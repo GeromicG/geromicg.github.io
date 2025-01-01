@@ -2,21 +2,19 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
     "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/EXINUS_Annual.csv",
-    "format": {
-      "type": "csv"
-    }
+    "format": {"type": "csv", "parse": {"observation_date": "number", "EXINUS": "number"}}
   },
   "width": 800,
   "height": 400,
   "title": "Indian Rupees to U.S. Dollar Spot Exchange Rate (Annual)",
-  "params": [    
+  "params": [
     {
       "name": "minYear",
       "value": 1973,
       "bind": {
         "input": "range",
-        "min": 1973, 
-        "max": 2023, 
+        "min": 1973,
+        "max": 2023,
         "step": 1,
         "name": "Start year:"
       }
@@ -26,8 +24,8 @@
       "value": 2023,
       "bind": {
         "input": "range",
-        "min": 1973, 
-        "max": 2023, 
+        "min": 1973,
+        "max": 2023,
         "step": 1,
         "name": "End year:"
       }
@@ -37,21 +35,27 @@
     {"filter": "datum.observation_date >= minYear"},
     {"filter": "datum.observation_date <= maxYear"}
   ],
-  "encoding": {
-    "x": {
-      "field": "observation_date",
-      "type": "quantitative",
-      "title": "Year",
-      "axis": {"format": "d"},
-      "scale": {"domain": [1973, 2024]}
-    },
-    "y": {
-      "field": "EXINUS",
-      "type": "quantitative",
-      "title": "Indian Rupees to One U.S. Dollar"
-    }
-  },
   "layer": [
+    {
+      "data": {
+        "values": [
+          {"start": 1975, "end": 1976},
+          {"start": 1991, "end": 1993},
+          {"start": 2020, "end": 2022}
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "color": "#d3d3d3",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {"field": "start", "type": "quantitative", "scale": {"domain": [1973, 2023]}},
+        "x2": {"field": "end"},
+        "y": {"value": 0},
+        "y2": {"value": 400}
+      }
+    },
     {
       "mark": {
         "type": "line",
@@ -60,34 +64,26 @@
       "encoding": {
         "x": {
           "field": "observation_date",
-          "type": "quantitative"
+          "type": "quantitative",
+          "title": "Year",
+          "axis": {"format": "d"},
+          "scale": {"domain": [1973, 2023]}
         },
         "y": {
           "field": "EXINUS",
-          "type": "quantitative"
+          "type": "quantitative",
+          "title": "Indian Rupees to One U.S. Dollar"
         },
         "tooltip": [
-          {
-            "field": "observation_date",
-            "type": "quantitative",
-            "title": "Year"
-          },
-          {
-            "field": "EXINUS",
-            "type": "quantitative",
-            "title": "Exchange Rate",
-            "format": ".4f"
-          }
+          {"field": "observation_date", "type": "quantitative", "title": "Year"},
+          {"field": "EXINUS", "type": "quantitative", "title": "Exchange Rate", "format": ".4f"}
         ]
       }
     },
     {
       "mark": "rule",
       "encoding": {
-        "x": {
-          "field": "observation_date",
-          "type": "quantitative"
-        },
+        "x": {"field": "observation_date", "type": "quantitative", "scale": {"domain": [1973, 2023]}},
         "opacity": {
           "condition": {"value": 0.7, "param": "hover", "empty": false},
           "value": 0
@@ -119,7 +115,7 @@
         "strokeWidth": 2
       },
       "encoding": {
-        "x": {"field": "observation_date", "type": "quantitative"},
+        "x": {"field": "observation_date", "type": "quantitative", "scale": {"domain": [1973, 2023]}},
         "y": {"field": "EXINUS", "type": "quantitative"},
         "opacity": {
           "condition": {"value": 1, "param": "hover", "empty": false},
