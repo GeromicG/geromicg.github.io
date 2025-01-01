@@ -6,7 +6,15 @@
   },
   "width": 800,
   "height": 400,
-  "title": "Indian Rupees to U.S. Dollar Spot Exchange Rate (Annual)",
+  "title": {
+    "text": "Indian Rupees to U.S. Dollar Spot Exchange Rate (Annual)",
+    "subtitle": ["Source: FRED"],
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitleFontWeight": "lighter",
+    "font": "sans-serif",
+    "anchor": "start"
+  },
   "params": [
     {
       "name": "minYear",
