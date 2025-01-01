@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
     "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/EXINUS_Annual.csv",
-    "format": {"type": "csv", "parse": {"observation_date": "number", "EXINUS": "number"}}
+    "format": {"type": "csv"}
   },
   "width": 800,
   "height": 400,
@@ -32,30 +32,14 @@
     }
   ],
   "transform": [
-    {"filter": "datum.observation_date >= minYear"},
-    {"filter": "datum.observation_date <= maxYear"}
+    {
+      "calculate": "year(datum.observation_date)",
+      "as": "year"
+    },
+    {"filter": "datum.year >= minYear"},
+    {"filter": "datum.year <= maxYear"}
   ],
   "layer": [
-    {
-      "data": {
-        "values": [
-          {"start": 1975, "end": 1976},
-          {"start": 1991, "end": 1993},
-          {"start": 2020, "end": 2022}
-        ]
-      },
-      "mark": {
-        "type": "rect",
-        "color": "#d3d3d3",
-        "opacity": 0.5
-      },
-      "encoding": {
-        "x": {"field": "start", "type": "quantitative", "scale": {"domain": [1973, 2023]}},
-        "x2": {"field": "end"},
-        "y": {"value": 0},
-        "y2": {"value": 400}
-      }
-    },
     {
       "mark": {
         "type": "line",
@@ -64,10 +48,9 @@
       "encoding": {
         "x": {
           "field": "observation_date",
-          "type": "quantitative",
+          "type": "temporal",
           "title": "Year",
-          "axis": {"format": "d"},
-          "scale": {"domain": [1973, 2023]}
+          "axis": {"format": "%Y"}
         },
         "y": {
           "field": "EXINUS",
@@ -75,7 +58,7 @@
           "title": "Indian Rupees to One U.S. Dollar"
         },
         "tooltip": [
-          {"field": "observation_date", "type": "quantitative", "title": "Year"},
+          {"field": "observation_date", "type": "temporal", "title": "Year"},
           {"field": "EXINUS", "type": "quantitative", "title": "Exchange Rate", "format": ".4f"}
         ]
       }
@@ -83,7 +66,7 @@
     {
       "mark": "rule",
       "encoding": {
-        "x": {"field": "observation_date", "type": "quantitative", "scale": {"domain": [1973, 2023]}},
+        "x": {"field": "observation_date", "type": "temporal"},
         "opacity": {
           "condition": {"value": 0.7, "param": "hover", "empty": false},
           "value": 0
@@ -91,20 +74,22 @@
         "color": {"value": "#8B0000"},
         "size": {"value": 3},
         "tooltip": [
-          {"field": "observation_date", "type": "quantitative", "title": "Year"},
+          {"field": "observation_date", "type": "temporal", "title": "Year"},
           {"field": "EXINUS", "type": "quantitative", "title": "Exchange Rate", "format": ".4f"}
         ]
       },
-      "params": [{
-        "name": "hover",
-        "select": {
-          "type": "point",
-          "fields": ["observation_date"],
-          "nearest": true,
-          "on": "mouseover",
-          "clear": "mouseout"
+      "params": [
+        {
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": ["observation_date"],
+            "nearest": true,
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
         }
-      }]
+      ]
     },
     {
       "mark": {
@@ -115,7 +100,7 @@
         "strokeWidth": 2
       },
       "encoding": {
-        "x": {"field": "observation_date", "type": "quantitative", "scale": {"domain": [1973, 2023]}},
+        "x": {"field": "observation_date", "type": "temporal"},
         "y": {"field": "EXINUS", "type": "quantitative"},
         "opacity": {
           "condition": {"value": 1, "param": "hover", "empty": false},
