@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Loop Dashboard Chart",
+   "title": {
+    "text": "Manufacture of coke and refined petroleum products: Weights:CVM",
+    "subtitle": "Source: ONI",
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/main/kzr7.json",
+    "format": {"type": "json", "property": "years"}
+  },
+  "width": 400,
+  "height": 300,
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": "Year"},
+    "y": {"field": "value", "type": "quantitative", "title": "Value"},
+      }
+}
