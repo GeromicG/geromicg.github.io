@@ -10,8 +10,8 @@
     "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/BAMLH0A0HYM2.json",
     "format": {"type": "json"}
   },
-  "width": 400,
-  "height": 300,
+  "width": 300,
+  "height": 225,
   "mark": {
     "type": "line",
     "point": true
