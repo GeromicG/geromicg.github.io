@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart showing debt-to-GDP ratio by country over time with a time slider.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/Debt_to_GDPfinal.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "Debt%": "number"
+      }
+    }
+  },
+  "width": 800,
+  "height": 500,
+  "title": {
+    "text": "Comparison of Debt-to-GDP Ratio",
+    "subtitle": ["Source: FRED"],
+    "fontSize": 18,
+    "subtitleFontSize": 12,
+    "subtitleFontWeight": "lighter",
+    "font": "sans-serif",
+    "anchor": "start"
+  },
+  "params": [
+    {
+      "name": "year_selection",
+      "value": 1991,
+      "bind": {
+        "input": "range",
+        "name": "Select Year: ",
+        "min": 1991,
+        "max": 2022,
+        "step": 1
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "isValid(datum['Debt%']) && isFinite(datum['Debt%'])"},
+    {"filter": "datum.year == year_selection"}
+  ],
+  "mark": {
+    "type": "bar",
+    "opacity": 0.8,
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "country",
+      "type": "nominal",
+      "axis": {
+        "title": "Country",
+        "labelAngle": -45,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "Debt%",
+      "type": "quantitative",
+      "axis": {
+        "title": "Debt to GDP (%)",
+        "grid": false
+      }
+    },
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "scale": {"scheme": "category20"},
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "country", "type": "nominal"},
+      {"field": "Debt%", "type": "quantitative", "title": "Debt to GDP (%)"},
+      {"field": "year", "type": "quantitative"}
+    ]
+  }
+}
