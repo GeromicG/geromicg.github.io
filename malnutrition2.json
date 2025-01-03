@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Sanitation vs. Stunting in India (NFHS-5 Data)",
+    "text": "Sanitation vs. Wasting in India (NFHS-5 Data)",
     "subtitle": [
-      "Population using improved sanitation facilities (x), Stunted children under 5 years (y)",
+      "Population using improved sanitation facilities (x), Wasted children under 5 years (y)",
       "Size of points based on states population",
       ""
     ],
@@ -24,7 +24,7 @@
   },
   "mark": {
     "type": "circle",
-    "color": "#002FA7",
+    "color": "#E64E53",
     "opacity": 0.7
   },
   "height": 450,
@@ -38,11 +38,11 @@
       "title": "Access to Improved Sanitation (%)"
     },
     "y": {
-      "field": "Children under 5 years who are stunted (height-for-age)18 (%)",
+      "field": "Children under 5 years who are wasted (weight-for-height)18 (%)",
       "type": "quantitative",
-      "scale": {"domain": [0, 60]},
+      "scale": {"domain": [0, 40]},
       "axis": {"grid": false},
-      "title": "Stunted Children (%)"
+      "title": "Wasted Children (%)"
     },
     "size": {
       "field": "Population (in mil)",
@@ -60,9 +60,9 @@
         "format": ".1f"
       },
       {
-        "field": "Children under 5 years who are stunted (height-for-age)18 (%)",
+        "field": "Children under 5 years who are wasted (weight-for-height)18 (%)",
         "type": "quantitative",
-        "title": "Stunted Children (%)",
+        "title": "Wasted Children (%)",
         "format": ".1f"
       },
       {
