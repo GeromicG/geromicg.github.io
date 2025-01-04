@@ -58,7 +58,7 @@
             <center><figure id="Location3"></figure></center>
             <figcaption>Chart 3: Correlation Coefficient is -0.512.</figcaption> <br>
  <div class="chart-description">
-            <p><b>Interpretation:</b>Correlation analysis shows that there is moderately negative relationship between child malutrition outcomes and access to improved sanitation in different states. Nearly all populous states perform poorly with Kerala being an outlier with exceptional access to sanitation. Tropical enteropathy, a subclinical condition characterized by chronic intestinal inflammation, is closely linked to poor sanitation and malnutrition in India. 
+            <p><b>Interpretation:</b><br>Correlation analysis shows that there is moderately negative relationship between child malutrition outcomes and access to improved sanitation in different states. Nearly all populous states perform poorly with Kerala being an outlier with exceptional access to sanitation. Tropical enteropathy, a subclinical condition characterized by chronic intestinal inflammation, is closely linked to poor sanitation and malnutrition in India. 
                 Unsanitary living conditions expose individuals to fecal pathogens, leading to repeated intestinal infections. This disrupts nutrient absorption, impairing growth and immune function. Children are particularly vulnerable, as tropical enteropathy perpetuates a cycle of malnutrition, stunted growth, and weakened immunity. 
                 Addressing inadequate sanitation and promoting hygiene practices are critical to breaking this cycle and improving public health outcomes in India.</p>
  </div>
@@ -83,7 +83,7 @@ o	Children with diarrhoea taken to a health facility_i: Children with diarrhoea 
 o	ϵi: Error term representing unobserved random factors.<br><br>
 <b>Coefficients:</b>β_0, β_1, β_2, β_3, β_4, β_5, β_6 are parameters to be estimated, representing the relationship between each independent variable and the under-five mortality rate.<br><br>
 
-<b>Assumptions:</b>The relationship between the predictors and U5MR is linear. Errors are independently and identically distributed with mean 0 and constant variance. Fixed effects  accounting for state-specific, time-invariant unobserved heterogeneity are not of relevance.<br>
+<b>Assumptions:</b>The relationship between the predictors and U5MR is linear. Errors are independently and identically distributed with mean 0 and constant variance. Fixed effects  accounting for state-specific, time-invariant unobserved heterogeneity are not of relevance.<br><br>
 
 <p><b>Analytical Framework:</b> In order to analyse, the python code used to do simple OLS regression of the filtered NFHS 5 dataset and estimating the coefficients is here - <a href="https://colab.research.google.com/drive/1JsxaxJvW9_-m5USM0_YIZ_0engWJrA8y?usp=sharing">Google CoLab Project Data Analysis Notebook</a>
 Based on this regression, a trellis chart is created which depicts the regression of Under-five mortality rate for state_i on independent variables that represent indicators of sanitation, child health, women's education and health. </p>
@@ -172,7 +172,7 @@ Improved sanitation- private and shared, therefore reduces child malnutrition, w
         let figure_3_spec = "malnutrition3.json"                                                                                                       
         let figure_4_spec = "regression_u5mr_trellis.json"                                                                                                                  
         let figure_5_spec = "indiau5mr_choropleth.json"
-        let figure_6_spec = "household_gini_uk.json"
+        let figure_6_spec = "malnutrition_state_rank.json"
         let figure_7_spec = "Gini_OECD.json"
       
         vegaEmbed('#Location1', figure_1_spec)
