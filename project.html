@@ -70,8 +70,8 @@
                 <h2> Linking Child Mortality with sanitation and maternal.</h2>
                 <h3> Regressing Child Mortality on maternal and child health & education indicators.</h3>
                 <p> Based on NFHS data and negative correlation of child malnutrition with sanitation seen in Part II, the following simple linear regression model is contructed for analysis
-                <center>U5MR_i = β_0 + β_1(Women with 10+ years of schooling_i) + β_2(Improved sanitation facility_i)+ β3(Below normal BMI Women_i) + β_4(Stunted_i) + β_5(Wasted_i) + β_6(Underweight_i) +  β_7(Children with diarrhoea taken to a health facility i) + ϵi</center>
-    <b>Dependent Variable:</b>	U5MR_i: Under-five mortality rate for state_i which is defined as the number of deaths per 1000 live births for children less than 5 years old.
+                <center>U5MR_i = β_0 + β_1(Women with 10+ years of schooling_i) + β_2(Improved sanitation facility_i)+ β3(Below normal BMI Women_i) + β_4(Stunted_i) + β_5(Wasted_i) + β_6(Underweight_i) +  β_7(Children with diarrhoea taken to a health facility i) + ϵ_i</center><br><br>
+    <b>Dependent Variable:</b>	U5MR_i: Under-five mortality rate for state_i which is defined as the number of deaths per 1000 live births for children less than 5 years old.<br>
 <b>Independent Variables (Predictors):</b><br>
 o	Women with 10+ years of schooling_i: Percentage of women (aged 15-49) with 10 or more years of schooling in state_i.<br>
 o	Improved sanitation facility_i: Percentage of the population in state_i living in households using improved sanitation facilities.<br>
@@ -80,12 +80,13 @@ o	Stunted_i: Percentage of children under five years in state iii who are stunte
 o	Wasted_i : Percentage of children under five years in state iii who are wasted (weight-for-height).<br>
 o	Underweight_i : Percentage of children under five years in state iii who are underweight (weight-for-age).<br>
 o	Children with diarrhoea taken to a health facility_i: Children with diarrhoea in the 2 weeks preceding the survey taken to a health facility or health provider (Children under age 5 years) (%). This is a proxy for access to health facilities and signifies that diarrhoea is the third biggest cause for child mortality in India. <br>
-o	ϵi: Error term representing unobserved random factors.<br>
-<b>Coefficients:</b>β0,β1,β2,β3,β4,β5,β6 are parameters to be estimated, representing the relationship between each independent variable and the under-five mortality rate.<br>
+o	ϵi: Error term representing unobserved random factors.<br><br>
+<b>Coefficients:</b>β_0, β_1, β_2, β_3, β_4, β_5, β_6 are parameters to be estimated, representing the relationship between each independent variable and the under-five mortality rate.<br><br>
 
 <b>Assumptions:</b>The relationship between the predictors and U5MR is linear. Errors are independently and identically distributed with mean 0 and constant variance. Fixed effects  accounting for state-specific, time-invariant unobserved heterogeneity are not of relevance.<br>
 
-<p><b>Analytical Framework:</b> In order to analyse, the python code used to do simple OLS regression of the filtered NFHS 5 dataset and estimate coeeficients is here - <a href="https://colab.research.google.com/drive/1JsxaxJvW9_-m5USM0_YIZ_0engWJrA8y?usp=sharing">Google CoLab Project Data Analysis Notebook</a></p>
+<p><b>Analytical Framework:</b> In order to analyse, the python code used to do simple OLS regression of the filtered NFHS 5 dataset and estimating the coefficients is here - <a href="https://colab.research.google.com/drive/1JsxaxJvW9_-m5USM0_YIZ_0engWJrA8y?usp=sharing">Google CoLab Project Data Analysis Notebook</a>
+Based on this regression, a trellis chart is created which depicts the regression of Under-five mortality rate for state_i on independent variables that represent indicators of sanitation, child health, women's education and health. </p>
                 
             </div>
            
