@@ -64,16 +64,51 @@
  </div>
         </section>
 
-      
+
+                <section>
+            <div class="chart-description">
+                <h2>Part III: Regressing Child Mortality on maternal and child health & education indicators.</h2>
+                <p> Based on NFHS data and negative correlation of child malnutrition with child mortality seen in Part II, the following regression model is contructed for analysis
+                <center>U5MR_i=β_0 + β_1(Women with 10+ years of schooling_i) + β_2(Improved sanitation facility_i)+ β3(Below normal BMI Women_i) + β_4(Stunted_i) + β_5(Wasted_i) + β_6(Underweight_i) +  β_7(Children with diarrhoea taken to a health facility i) + ϵi</center>
+    <b>Dependent Variable:</b>	U5MR_i: Under-five mortality rate for state_i which is defined as the number of deaths per 1000 live births for children less than 5 years old.
+<b>Independent Variables (Predictors):</b><br>
+o	Women with 10+ years of schooling_i: Percentage of women (aged 15-49) with 10 or more years of schooling in state_i.<br>
+o	Improved sanitation facility_i: Percentage of the population in state_i living in households using improved sanitation facilities.<br>
+o	Below normal BMI Women_i: Women (age 15-49 years) whose Body Mass Index (BMI) is below normal (BMI <18.5 kg/m2)%<br>
+o	Stunted_i: Percentage of children under five years in state iii who are stunted (height-for-age).<br>
+o	Wasted_i : Percentage of children under five years in state iii who are wasted (weight-for-height).<br>
+o	Underweight_i : Percentage of children under five years in state iii who are underweight (weight-for-age).<br>
+o	Children with diarrhoea taken to a health facility_i: Children with diarrhoea in the 2 weeks preceding the survey taken to a health facility or health provider (Children under age 5 years) (%)
+o	ϵi: Error term representing unobserved random factors.<br>
+<b>Coefficients:</b>β0,β1,β2,β3,β4,β5,β6 are parameters to be estimated, representing the relationship between each independent variable and the under-five mortality rate.<br>
+
+<b>Assumptions:</b>The relationship between the predictors and U5MR is linear. Errors are independently and identically distributed with mean 0 and constant variance. Fixed effects  accounting for state-specific, time-invariant unobserved heterogeneity are not of relevance.
+
+<p><b>Analytical Framework:</b> In order to analyse, the python code used to rerression of the filtered NFHS 5 dataset and estimate coeeficients is here - <a href="https://colab.research.google.com/drive/1JsxaxJvW9_-m5USM0_YIZ_0engWJrA8y?usp=sharing">Google CoLab Project Data Analysis Notebook</a></p>
+                
+            </div>
+           
+           <center><figure id="Location4"></figure></center> 
+            <figcaption>Chart 4: Trellis chart with regression lines for different indicators against Under-five mortality rate. Source:NFHS 5.</figcaption><br>
+                    
+<div class="chart-description">
+<p><b>Interpretation:</b><br>
+<b>R-squared (0.731):</b> This value indicates that 73.1% of the variability in the under-five mortality rate is explained by the independent variables in the model. This suggests a good fit.<br>
+-Regression analysis shows that four independent variables are significant at 10% level of significance (considering the small sample size and simple model) which are:<br>
+<b>- Women (age 15-49) with 10 or more years of schooling (%): β_1 = - 0.3311 </b>Female education significantly reduces under-five mortality rates.<br>
+<b>- Population living in households that use an improved sanitation facility (%):β_2 = - 0.2611 </b> Access to improved sanitation is associated with lower under-five mortality rates.<br>
+<b>- Women (age 15-49 years) whose Body Mass Index (BMI) is below normal (BMI <18.5 kg/m2) (%): β_3 = 1.3275 </b> Poor maternal nutrition is associated with higher under-five mortality rates.<br>
+<b>- Children under 5 years who are stunted (height-for-age)18 (%): β_4 = 1.0098 </b> Higher stunting rates are associated with higher under-five mortality rates.<br>
+            
         <section>
             <div class="chart-description">
-                <h2>Part III: Regional Variations in Child Health Outcomes in India</h2>
+                <h2>Part IV: Regional Variations in Child Health Outcomes in India</h2>
                 <p>Under-five mortality (U5MR) is defined as the number of deaths per 1000 live births for children less than 5 years old. 
                 Using data from the National Family Health Survey 5 (2019-20), this chart shows the wide variations in under-five mortality rates across different states with southern states like Kerala having lower mortality rates while northern states such as Uttar Pradesh and Bihar having above national average mortality.</p>
             </div>
            
             <figure id="Location5"></figure>
-            <figcaption>Chart 4: A choropleth map of India showing under-five mortality rates for children (U5MR) state-wise for 2019-20. Source:NFHS 5.</figcaption>
+            <figcaption>Chart 5: A choropleth map of India showing under-five mortality rates for children (U5MR) state-wise for 2019-20. Source:NFHS 5.</figcaption>
             </section>  
             
           <section>
@@ -105,7 +140,7 @@
         let figure_1_spec = "malnutrition1.json";
         let figure_2_spec = "malnutrition2.json" 
         let figure_3_spec = "malnutrition3.json"                                                                                                       
-        let figure_4_spec = "indiau5mr_choropleth.json"                                                                                                                  
+        let figure_4_spec = "regression_u5mr_trellis.json"                                                                                                                  
         let figure_5_spec = "indiau5mr_choropleth.json"
         let figure_6_spec = "household_gini_uk.json"
         let figure_7_spec = "Gini_OECD.json"
