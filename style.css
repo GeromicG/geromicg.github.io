@@ -136,17 +136,18 @@
     box-shadow: var(--shadow-md);
   }
 
-  figcaption {
-    margin-top: 1rem;
-    font-size: 0.875rem;
-    color: var(--secondary-color);
-    text-align: center;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    max-width: 90%;
-    line-height: 1.5;
-  }
+figcaption {
+  margin-top: 0.5rem; /* Reduced gap between figure and figcaption */
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold; /* Changed font-weight to bold */
+  letter-spacing: 0.02em;
+  max-width: 90%;
+  line-height: 1.5;
+}
+
 
   img {
     max-width: 100%;
