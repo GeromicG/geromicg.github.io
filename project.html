@@ -137,14 +137,15 @@ Based on this regression, a trellis chart is created which depicts the regressio
     The mission's second phase focuses on sustaining ODF status and enhancing waste management</p>
                 
             <center><figure id="Location7"></figure></center>
-            <figcaption>Chart 7: Trellis plot showing India's progress in child health outcomes remained consistent in last 2 decades. Source: NFHS Surveys </figcaption>
+            <figcaption>Chart 7: Trellis plot showing India's progress in child health outcomes remained consistent in last 2 decades. Stunting% and Wasting% is not comparable across NFHS surveys due to difference in methodologies. </figcaption>
 
-                <center><figure id="Location7"></figure></center>
-            <figcaption>Chart 8: Histogram showing India's massive construction of househould toilets through Swacch Bharat Mission Phase I. Source: Government of India </figcaption><br>
+                <center><figure id="Location8"></figure></center>
+            <figcaption>Chart 8: Histogram showing India's massive construction of househould toilets through Swacch Bharat Mission Phase I. Almost 50% in 'Aspirational States'.</figcaption><br>
 
                 <p><b>Interpretation: </b><br>
         It can be seen that India has witnessed excellent progress in the last 2 decades.
         By analysing the National Family Health Survey data since 1992-93 to 2019-21, there has been consistent decline in the indicators of malnutrition and under five mortality rate in 2000s and 2010s which corresponds with the implementation of Swachh Bharat Mission (SBM) and it's predecessor. 
+        Chart 8 shows the huge improvement in government driven construction of individual household toilets in aspirational states. 
         However, there is still a long way to go as India needs to reduce the incidences of child malnutrition and mortality to the level of developed nations by 2030 in order to achieve the SDGs on these indicators.</p>
         
         </section>
@@ -183,6 +184,7 @@ Through such integrated efforts, India can make substantial progress toward achi
         let figure_5_spec = "indiau5mr_choropleth.json"
         let figure_6_spec = "malnutrition_state_rank.json"
         let figure_7_spec = "childhealth_trends.json"
+        let figure_8_spec = "India_IHHL.json"
       
         vegaEmbed('#Location1', figure_1_spec)
         vegaEmbed('#Location2', figure_2_spec)
@@ -191,6 +193,7 @@ Through such integrated efforts, India can make substantial progress toward achi
         vegaEmbed('#Location5', figure_5_spec)
         vegaEmbed('#Location6', figure_6_spec)
         vegaEmbed('#Location7', figure_7_spec)
+        vegaEmbed('#Location8', figure_8_spec)
         
     </script>
 </body>
