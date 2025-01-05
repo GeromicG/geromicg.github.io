@@ -67,8 +67,8 @@
 
                 <section>
             <div class="chart-description">
-                <h2> Linking Child Mortality with sanitation and maternal.</h2>
-                <h3> Regressing Child Mortality on maternal and child health & education indicators.</h3>
+                <h2> Linking Child Mortality with Health and Education Indicators.</h2>
+                <h3> Regressing Child Mortality on sanitation, maternal and child health & education indicators.</h3>
                 <p> Based on NFHS data and negative correlation of child malnutrition with sanitation seen in Part II, the following simple linear regression model is contructed for analysis
                 <center>U5MR_i = β_0 + β_1(Women with 10+ years of schooling_i) + β_2(Improved sanitation facility_i)+ β3(Below normal BMI Women_i) + β_4(Stunted_i) + β_5(Wasted_i) + β_6(Underweight_i) +  β_7(Children with diarrhoea taken to a health facility i) + ϵ_i</center><br><br>
     <b>Dependent Variable:</b>	U5MR_i: Under-five mortality rate for state_i which is defined as the number of deaths per 1000 live births for children less than 5 years old.<br>
@@ -97,16 +97,18 @@ Based on this regression, a trellis chart is created which depicts the regressio
 <p><b>Interpretation:</b><br>
 <b>R-squared (0.731):</b> This value indicates that 73.1% of the variability in the under-five mortality rate is explained by the independent variables in the model. This suggests a good fit.<br>
 <b>Significant variables:</b> Regression analysis shows that four independent variables are significant at 10% level of significance (considering the small sample size and simple model) which are:<br>
-<b>- Women (age 15-49) with 10 or more years of schooling (%): β_1 = - 0.3311 </b>Female education significantly reduces under-five mortality rates.<br>
-<b>- Population living in households that use an improved sanitation facility (%):β_2 = - 0.2611 </b> Access to improved sanitation is associated with lower under-five mortality rates.<br>
-<b>- Women (age 15-49 years) whose Body Mass Index (BMI) is below normal (BMI <18.5 kg/m2) (%): β_3 = 1.3275 </b> Poor maternal nutrition is associated with higher under-five mortality rates.<br>
-<b>- Children under 5 years who are stunted (height-for-age)18 (%): β_4 = 1.0098 </b> Higher stunting rates are associated with higher under-five mortality rates.<br>
-    </section>
+<b>- Women (age 15-49) with 10 or more years of schooling (%): β_1 = - 0.3311 </b>On average, when all other factors are constant, female education significantly reduces under-five mortality rates.<br>
+<b>- Population living in households that use an improved sanitation facility (%):β_2 = - 0.2611 </b> On average, when all other factors are constant, access to improved sanitation is associated with lower under-five mortality rates.<br>
+<b>- Women (age 15-49 years) whose Body Mass Index (BMI) is below normal (BMI <18.5 kg/m2) (%): β_3 = 1.3275 </b> On average, when all other factors are constant, poor maternal nutrition is associated with higher under-five mortality rates.<br>
+<b>- Children under 5 years who are stunted (height-for-age)18 (%): β_4 = 1.0098 </b> On average, when all other factors are constant, higher stunting rates are associated with higher under-five mortality rates.<br>
+    <p><b>Drawbacks:</b> The issues of Omitted Variable Bias and the correct specification of the model as well as lack of panel data which can give time fixed effects are present. However, the model still gives a reasonably good picture of complex inter-relationships between child mortality 
+        and sanitation, child malnutrition, women's education and health. </p>
+                </section>
         
         <section>
             <div class="chart-description">
                 <h2>Part IV: Regional Disparities in Child Health Outcomes</h2>
-                <h3>Mapping and Ranking Regional Disparities of Child Health Outcomes in India</h3>
+                <h3>Comparative Visualization: Mapping and Ranking Regional Disparities of Child Health Outcomes in India</h3>
                 <p>Mapping and ranking regional disparities in child health outcomes in India is crucial for identifying inequities, prioritizing resources, and designing targeted interventions to improve child survival and well-being.</p>
               
             </div>
@@ -118,25 +120,37 @@ Based on this regression, a trellis chart is created which depicts the regressio
             <figcaption>Chart 6: Histogram that ranks the states of India on child malnutrition indicators. Source:NFHS 5.</figcaption><br>
             
             <div class="chart-description">
-          <p><b>Interpretation:Idea of 'Aspirational States'</b><br>
+          <p><b>Interpretation: Idea of 'Aspirational States'</b><br>
         Using data from the National Family Health Survey 5 (2019-21), the two charts show the wide variations in under-five mortality rates across different states with southern states like Kerala having lower mortality rates while northern states such as Uttar Pradesh and Bihar having above national average mortality.
-          Specifically, it can be seen that a <b>class of 'aspirational states' exist - Bihar, Uttar Pradesh, Madhya Pradesh, Jharkhand and union territories of Dadra and Nagar Haveli and Daman and Diu</b> which are progressing rapidly but are also 'low-hanging fruits' from a policy perspective.
-          <br>Meghalaya is an <b>outlier</b> in stunting which is unusual as it does relatively better in other indicators and this needs to be examined more thoroughly in future.</p>
+          Specifically, it can be seen that a <b>class of 'aspirational states' exist - Bihar, Uttar Pradesh, Madhya Pradesh, Gujarat, Jharkhand and union territories of Dadra and Nagar Haveli and Daman and Diu</b> which are progressing rapidly but are also 'low-hanging fruits' from a policy perspective.
+          <br>The state of Meghalaya is an <b>outlier</b> in stunting which is unusual as it does relatively better in other indicators and this needs to be examined more thoroughly in future.</p>
             </section>  
             
           <section>
             <div class="chart-description">   
-            <h2>Part V: Policy Response - Swachh Bharat Mission for increasing sanitation access across India.</h2>
-                <p> History shows that installation of modern sewage systems in large cities like London and New York transformed the health of nations, by eliminating the spread on many diseases that thrive on poor sanitation and sewage. Attention of public health policy should shift to improving the sewage collection, treatment systems in urban, semi-urban and semi-rural areas of each state. Given that our goal is to become a upper middle income country in 5-7 years, and a high income country in 25 years, we need to develop State level grids for collecting, processing and recycling sewage and solid waste in the next ten years.</p>
+            <h2>Part V: Assessing India's Progress </h2>
+            <h3>India's Progress & Policy Response on Sanitation </h3>
+    <p> History shows that installation of modern sewage systems in large cities like London and New York transformed the health of nations, by eliminating the spread on many diseases that thrive on poor sanitation and sewage. 
+    Attention of public health policy should shift to improving the sewage collection, treatment systems in urban, semi-urban and semi-rural areas of each state.</p>
+    <p>Government of India's targetted intervention in sanitation began in 1999 with the Total Sanitation Campaign (TSC).  It was succeeded by The Swachh Bharat Mission (SBM), launched on October 2, 2014, aimed to make India Open Defecation Free (ODF) by constructing individual and community toilets. SBM's targets included eliminating open defecation and improving solid and liquid waste management.
+    The method involved extensive public awareness campaigns, community involvement, and government support at multiple levels. 
+    The mission's second phase focuses on sustaining ODF status and enhancing waste management</p>
+                
             <figure id="Location6"></figure>
-            <figcaption>Chart 5: Depiction of UK Consumer Spending on Vices </figcaption>
+            <figcaption>Chart 7: India's progress in child health outcomes accelerated in last 2 decades. </figcaption>
+
+                <p><b>Interpretation: </b><br>
+        It can be seen that India has witnessed excellent progress in the last 2 decades.
+        By analysing the National Family Health Survey data since 1992-93 to 2019-21, there has been consistent decline in the indicators of malnutrition and under five mortality rate in 2000s and 2010s which corresponds with the implementation of Swachh Bharat Mission (SBM) and it's predecessor. 
+        However, there is still a long way to go as India needs to reduce the incidences of child malnutrition and mortality to the level of developed nations by 2030 in order to achieve the SDGs on these indicators.</p>
+        
         </section>
 
        
      <section>
             <div class="chart-description">   
             <h2>Part VI: Conclusion </h2>
-     <h3>Summary of Findings & Policy Recommendations</h3>    
+     <h3>Summary of Findings</h3>    
     <p> The key findings can be summarized as follows:<br>
      1. Female education plays a pivotal role in reducing under-five mortality rates, as evidenced by the inverse relationship between the percentage of women with 10 or more years of schooling and child mortality.
        Simiarly, high maternal undernutrition, indicated by a BMI below normal is strongly associated with increased under-five mortality rates.
@@ -152,7 +166,6 @@ To achieve the Sustainable Development Goals (SDGs) on child health and sanitati
 <b>Second,</b> accelerating the implementation of sanitation programs, such as Swachh Bharat Abhiyan, with a focus on improving quality of toilets (individual private houhehold toilets and adequate liquid and solid waste management at community level) and behavioral change in regions lagging behind, will have direct and immediate benefits.<br> 
 <b>Thirdly,</b> strengthening maternal health programs to address undernutrition among women and implementing community-based nutrition interventions targeting stunting among children can significantly improve child survival outcomes.<br>
 Through such integrated efforts, India can make substantial progress toward achieving SDG targets on reducing child malnutrition, mortality, and improving access to sanitation by 2030.
-Improved sanitation- private and shared, therefore reduces child malnutrition, which in turn reduces child mortality across Indian States. Access to and use of public health information, proxied in the study by female education levels, is also found to have a significant effect on child mortality. Mother’s education is critical for understanding and using information about child health & well-being. Therefore find a strong and significant effect of female education on child mortality. 
         </p>
             
         </section>
