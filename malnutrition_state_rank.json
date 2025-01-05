@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "State-wise chart depicting selected child health indicators with a dropdown menu and hover effect.",
+  "description": "State-wise chart depicting selected child health indicators with a dropdown menu.",
   "width": 600,
   "height": 600,
   "params": [
@@ -35,18 +35,9 @@
     "subtitle": "Source: NFHS 5",
     "subtitleFontStyle": "italic"
   },
-  "selection": {
-    "hover": {
-      "type": "single",
-      "on": "mouseover",
-      "empty": "none",
-      "fields": ["States"]
-    }
-  },
   "mark": {
     "type": "bar",
-    "tooltip": true,
-    "opacity": {"condition": {"selection": "hover", "value": 1}, "value": 0.8}
+    "tooltip": true
   },
   "encoding": {
     "y": {
@@ -61,10 +52,10 @@
       "title": "Percentage"
     },
     "color": {
-      "condition": [
-        {"test": "datum.isIndia", "value": "#002FA7"},
-        {"selection": "hover", "value": "#4CAF50"}
-      ],
+      "condition": {
+        "test": "datum.isIndia",
+        "value": "#002FA7"
+      },
       "field": "value",
       "type": "quantitative",
       "scale": {
