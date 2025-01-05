@@ -2,14 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Trellis chart with independent Y-axes for U5MR and Underweight%.",
   "title": {
-    "text": "India Child Health Trends U5MR and Underweight%",
+    "text": "India Trends: U5MR and Underweight%",
     "subtitle": "Data from NFHS surveys",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
-    "anchor": "middle",
-    "color": "#333333",
-    "fontSize": 16,
-    "offset": 10
+    "anchor": "start",
+    "color": "black"
   },
   "data": {
     "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/India_Trends_NFHS.csv",
@@ -24,82 +22,37 @@
     }
   ],
   "facet": {
-    "column": {
-      "field": "Series",
-      "type": "nominal",
-      "title": null,
-      "header": {
-        "labelFontSize": 14,
-        "labelFontWeight": "bold",
-        "labelColor": "#333333"
-      }
-    }
+    "column": {"field": "Series", "type": "nominal"}
   },
   "spacing": 50,
-  "config": {
-    "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 13,
-      "labelColor": "#666666",
-      "titleColor": "#333333"
-    },
-    "view": {
-      "stroke": "transparent"
-    }
-  },
   "spec": {
-    "width": 350,
-    "height": 250,
+    "width": 380,
+    "height": 300,
     "layer": [
       {
         "mark": {
           "type": "line",
-          "point": {
-            "filled": true,
-            "size": 80,
-            "strokeWidth": 1.5,
-            "stroke": "white"
-          },
+          "point": {"filled": false, "strokeWidth": 2},
           "strokeWidth": 3,
-          "opacity": 0.8,
-          "strokeCap": "round",
-          "strokeJoin": "round"
+          "opacity": 0.8
         },
         "encoding": {
           "x": {
             "field": "Year",
             "type": "temporal",
             "title": "Year",
-            "axis": {
-              "format": "%Y",
-              "grid": false,
-              "tickCount": 5
-            }
+            "axis": {"format": "%Y", "grid": false}
           },
           "y": {
             "field": "Value",
             "type": "quantitative",
             "title": null,
-            "scale": {
-              "domain": {"field": "Series", "selection": "series"},
-              "nice": true,
-              "zero": true
-            },
-            "axis": {
-              "grid": true,
-              "gridColor": "#EEEEEE",
-              "gridWidth": 0.5,
-              "tickCount": 5
-            }
+            "axis": {"grid": false}
           },
           "color": {
             "field": "Series",
             "type": "nominal",
-            "legend": null,
-            "scale": {
-              "domain": ["U5MR", "Underweight%"],
-              "range": ["#2E86C1", "#E67E22"]
-            }
+            "legend": null
           }
         }
       },
@@ -122,29 +75,5 @@
       }
     ]
   },
-  "resolve": {
-    "scale": {
-      "y": "independent",
-      "color": "independent"
-    }
-  },
-  "transform": [
-    {
-      "filter": {
-        "field": "Series",
-        "oneOf": ["U5MR", "Underweight%"]
-      }
-    },
-    {
-      "calculate": "datum.Series === 'U5MR' ? [0, 120] : [0, 100]",
-      "as": "yDomain"
-    }
-  ],
-  "encoding": {
-    "y": {
-      "scale": {
-        "domain": {"field": "yDomain"}
-      }
-    }
-  }
+  "resolve": {"scale": {"y": "independent"}}
 }
