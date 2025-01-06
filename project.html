@@ -30,7 +30,7 @@
             <div class="chart-description">
                 <h2>Part I: Introduction</h2>
                 <p><b>Objectives:</b> This project aims to examine the relationship between child mortality outcomes in children (under five) across Indian states and various factors that may infleunce it such as malnutrition, women's education and improved access to sanitation (government intervention). 
-              <p><b>Data:</b> National Family Health Surveys (NFHS) from (NFHS) - 1 [1992-93], (NFHS) - 2 [1998-99], (NFHS) - 3 [2005-06], (NFHS) - 4 [2015-16],  (NFHS) - 5 [2019-21]and Census of India (2011). 
+              <p><b>Data:</b> National Family Health Surveys (NFHS) from (NFHS) 1-5 (1992-2021) and the Census of India (2011). 
                 <a href="https://www.data.gov.in/search?title=NFHS%20%205%20sanitation&type=resources&sortby=changed">Open Data Government Platform India</a>
             </p>
             </div>
@@ -41,17 +41,17 @@
             <div class="chart-description">
                 <h2>Part II: Relationship between Child Malnutrition & Access to Sanitation in India</h2>
 
-    <p><b>Analytical Framework:</b>  NFHS - 5 (2019-21) data state wise is used to create bubble correlation charts (population adjusted) and conduct coorelation analysis between the two. 
-    The python code used to extract and the filter the NFHS 5 dataset and estimate correlation is here - <a href="https://colab.research.google.com/drive/1SE6Icraj3Idix65jb5pegqKlF9DVhgqE?usp=sharing">Google CoLab Project Data Analysis Notebook</a></p>
+    <p><b>Analytical Framework:</b>  Using NFHS-5 (2019-21) state-wise data, bubble correlation charts (population-adjusted) and correlation analysis explore the relationship between child malnutrition variables and access to sanitation. 
+    Filtering the NFHS 5 dataset & estimating correlation - <a href="https://colab.research.google.com/drive/1SE6Icraj3Idix65jb5pegqKlF9DVhgqE?usp=sharing">Google CoLab Project Data Analysis Notebook</a></p>
             </div>
             <center><figure id="Location1"></figure></center>
-            <figcaption>Chart 1: Correlation Coefficient is -0.466.</figcaption> <br>
+            <figcaption>Chart 1: Correlation Coefficient = -0.466.</figcaption> <br>
             <center><figure id="Location2"></figure></center>
-            <figcaption>Chart 2: Correlation Coefficient is -0.457.</figcaption><br>
+            <figcaption>Chart 2: Correlation Coefficient = -0.457.</figcaption><br>
             <center><figure id="Location3"></figure></center>
-            <figcaption>Chart 3: Correlation Coefficient is -0.512.</figcaption> <br>
+            <figcaption>Chart 3: Correlation Coefficient = -0.512.</figcaption> <br>
  <div class="chart-description">
-<p><b>Interpretation:</b>Correlation analysis shows a moderate negative relationship between child malnutrition and access to improved sanitation because of tropical enteropathy (clinical condition), linked to poor sanitation, causes chronic intestinal inflammation, disrupting nutrient absorption and impairing growth in children and weakening their immunity.</p>
+<p><b>Interpretation:</b>A moderate negative correlation exists between child malnutrition and improved sanitation. Poor sanitation exacerbates tropical enteropathy, a condition causing chronic intestinal inflammation, disrupting nutrient absorption, impairing growth, and weakening immunity in children.</p>
 
  </div>
         </section>
@@ -61,24 +61,17 @@
             <div class="chart-description">
                 <h2> Linking Child Mortality with Health and Education Indicators.</h2>
                 <h3> Regression Model </h3>
-                <p> Based on NFHS data and negative correlation of child malnutrition with sanitation seen in Part II, the following simple linear regression model is contructed for analysis
+                <p> Simple linear regression model is contructed:
                 <center>U5MR_i = β_0 + β_1(Women with 10+ years of schooling_i) + β_2(Improved sanitation facility_i)+ β_3(Below normal BMI Women_i) + β_4(Stunted_i) + β_5(Wasted_i) + β_6(Underweight_i) +  β_7(Children with diarrhoea taken to a health facility_i) + ϵ_i</center><br><br>
    <b>Dependent Variable:</b> U5MR_i: Under-five mortality rate for state_i, defined as deaths per 1000 live births for children under 5.<br>
-<b>Independent Variables:</b><br>
-o	Women with 10+ years of schooling_i: % of women (15-49) with 10+ years of schooling in state_i.<br>
-o	Improved sanitation facility_i: % of households in state_i using improved sanitation.<br>
-o	Below normal BMI Women_i: % of women (15-49) in state_i with BMI <18.5 kg/m2.<br>
-o	Stunted_i: % of children under five in state_i who are stunted (height-for-age).<br>
-o	Wasted_i: % of children under five in state_i who are wasted (weight-for-height).<br>
-o	Underweight_i: % of children under five in state_i who are underweight (weight-for-age).<br>
-o	Children with diarrhoea taken to a health facility_i: % of children under five with diarrhoea taken to a health provider in the 2 weeks before the survey, a proxy for health access and diarrhoea is leading cause of mortality.
-    <a href="https://www.statista.com/statistics/643462/leading-causes-of-death-among-children-india/">Statista- Causes of Death of Children India</a><br>
-o	ϵi: Error term <br><br>
+<b>Independent Variables for state_i:</b>Women’s education, sanitation, maternal health (BMI), stunted, wasted, underweight children, and diarrhoea care access (proxy for health access and diarrhoea is 3rd leading cause of child mortality.
+<a href="https://www.statista.com/statistics/643462/leading-causes-of-death-among-children-india/">Statista- Causes of Death of Children India</a><br>
+
 <b>Coefficients:</b>β_0, β_1, β_2, β_3, β_4, β_5, β_6 are parameters to be estimated.<br><br>
 
-<b>Assumptions:</b>The relationship between the predictors and U5MR is linear. Errors are independently and identically distributed. <br><br>
+<b>Assumptions:</b>Linear relationship. Errors are independently and identically distributed. <br><br>
 
-<p><b>Analytical Framework:</b> In order to analyse, the python code used to do simple OLS regression of the filtered NFHS 5 dataset and estimating the coefficients is here - <a href="https://colab.research.google.com/drive/1JsxaxJvW9_-m5USM0_YIZ_0engWJrA8y?usp=sharing">Google CoLab Project Data Analysis Notebook</a>
+<p><b>Analytical Framework:</b> Simple OLS regression of the filtered NFHS 5 dataset and estimating the coefficients - <a href="https://colab.research.google.com/drive/1JsxaxJvW9_-m5USM0_YIZ_0engWJrA8y?usp=sharing">Google CoLab Project Data Analysis Notebook</a>
 Based on this regression, a trellis chart is created which depicts the regression of U5MR for state_i on independent variables that represent indicators of sanitation, child health, women's education and health. </p>
                 
             </div>
@@ -94,27 +87,27 @@ Based on this regression, a trellis chart is created which depicts the regressio
 <b>- Improved sanitation (%): β_2 = -0.2611</b> Greater access to sanitation associated with lower under-five mortality.<br>
 <b>- Women with BMI <18.5 (%): β_3 = 1.3275</b> Poor maternal nutrition associated with increased under-five mortality.<br>
 <b>- Stunted children (%): β_4 = 1.0098</b> Higher stunting rates associated with increased under-five mortality.<br>
-<p><b>Limitations:</b> Omitted variable bias, model specification and time & state fixed effects are limitations.</p>
+<p><b>Limitations:</b> Omitted variable bias and lack of state-specific or time-invariant fixed effects..</p>
 
 </div></section>
         
         <section>
             <div class="chart-description">
                 <h2>Part IV: Regional Disparities in Child Health Outcomes</h2>
-                <h3>Mapping and Ranking Regional Disparities of Child Health Outcomes </h3>
+                <h3>Mapping and Ranking Regional Disparities </h3>
                 <p> Identifying regional disparities in child health outcomes in India is crucial for identifying inequities, prioritizing resources, and designing targeted interventions address it.</p>
               
             </div>
            
             <center><figure id="Location5"></figure></center>
-            <figcaption>Chart 5: A choropleth map of India showing regional disparities in under-five mortality rates for children (U5MR) state-wise. Source:NFHS 5.</figcaption><br>
+            <figcaption>Chart 5: Choropleth map shows state-wise U5MR disparities. Source:NFHS 5.</figcaption><br>
 
              <center><figure id="Location6"></figure></center>
-            <figcaption>Chart 6: Histogram that ranks the states of India on child malnutrition indicators. Source:NFHS 5.</figcaption><br>
+            <figcaption>Chart 6:  Histogram ranks states on child malnutrition indicators.. Source:NFHS 5.</figcaption><br>
             
             <div class="chart-description">
           <p><b>Interpretation: 'Aspirational States'</b><br>
-There are wide regional variations in child health outcomes. A <b>class of 'aspirational states'</b>—Bihar, Uttar Pradesh, Madhya Pradesh, Gujarat, Jharkhand, and union territories like Dadra and Nagar Haveli and Daman and Diu—are rapidly progressing yet remain behind key policy targets.
+A <b>class of 'aspirational states'</b>—Bihar, Uttar Pradesh, Madhya Pradesh, Gujarat, Jharkhand, and union territories like Dadra and Nagar Haveli and Daman and Diu—are rapidly progressing yet remain behind key policy targets.
 The state of Meghalaya is an <b>outlier</b> in stunting while performing better in other indicators, warranting further investigation.</p>
 
             </section>  
@@ -123,8 +116,7 @@ The state of Meghalaya is an <b>outlier</b> in stunting while performing better 
             <div class="chart-description">   
             <h2>Part V: Assessing India's Progress </h2>
             <h3>India's Progress & Policy Response on Sanitation </h3>
-    <p>Government of India's targetted intervention in sanitation began in 1999 with the Total Sanitation Campaign (TSC).  It was succeeded by the Swachh Bharat Mission (SBM), launched on October 2, 2014, aimed to make India Open Defecation Free (ODF) by constructing individual and community toilets. SBM's targets included eliminating open defecation and improving solid and liquid waste management.
-    </p>
+    <p>Government interventions, such as the Total Sanitation Campaign (1999) and Swachh Bharat Mission (2014), have targeted open defecation and waste management.</p>
                 
             <center><figure id="Location7"></figure></center>
             <figcaption>Chart 7: Trellis plot showing India's progress in child health outcomes remained consistent in last 2 decades. Stunting% and Wasting% is not comparable across NFHS surveys due to difference in methodologies. </figcaption><br>
