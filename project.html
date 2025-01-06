@@ -69,15 +69,15 @@
                 <h3> Regressing Child Mortality on sanitation, maternal and child health & education indicators.</h3>
                 <p> Based on NFHS data and negative correlation of child malnutrition with sanitation seen in Part II, the following simple linear regression model is contructed for analysis
                 <center>U5MR_i = β_0 + β_1(Women with 10+ years of schooling_i) + β_2(Improved sanitation facility_i)+ β_3(Below normal BMI Women_i) + β_4(Stunted_i) + β_5(Wasted_i) + β_6(Underweight_i) +  β_7(Children with diarrhoea taken to a health facility_i) + ϵ_i</center><br><br>
-    <b>Dependent Variable:</b>	U5MR_i: Under-five mortality rate for state_i which is defined as the number of deaths per 1000 live births for children less than 5 years old.<br>
+   <b>Dependent Variable:</b> U5MR_i: Under-five mortality rate for state_i, defined as deaths per 1000 live births for children under 5.<br>
 <b>Independent Variables (Predictors):</b><br>
-o	Women with 10+ years of schooling_i: Percentage of women (aged 15-49) with 10 or more years of schooling in state_i.<br>
-o	Improved sanitation facility_i: Percentage of the population in state_i living in households using improved sanitation facilities.<br>
-o	Below normal BMI Women_i: Women (age 15-49 years) whose Body Mass Index (BMI) is below normal (BMI <18.5 kg/m2)%<br>
-o	Stunted_i: Percentage of children under five years in state iii who are stunted (height-for-age).<br>
-o	Wasted_i : Percentage of children under five years in state iii who are wasted (weight-for-height).<br>
-o	Underweight_i : Percentage of children under five years in state iii who are underweight (weight-for-age).<br>
-o	Children with diarrhoea taken to a health facility_i: Children with diarrhoea in the 2 weeks preceding the survey taken to a health facility or health provider (Children under age 5 years) (%). This is a proxy for access to health facilities and signifies that diarrhoea is the third biggest cause for child mortality in India. 
+o	Women with 10+ years of schooling_i: Percentage of women (15-49) with 10+ years of schooling in state_i.<br>
+o	Improved sanitation facility_i: Percentage of households in state_i using improved sanitation.<br>
+o	Below normal BMI Women_i: Percentage of women (15-49) in state_i with BMI <18.5 kg/m2.<br>
+o	Stunted_i: Percentage of children under five in state_i who are stunted (height-for-age).<br>
+o	Wasted_i: Percentage of children under five in state_i who are wasted (weight-for-height).<br>
+o	Underweight_i: Percentage of children under five in state_i who are underweight (weight-for-age).<br>
+o	Children with diarrhoea taken to a health facility_i: Percentage of children under five with diarrhoea taken to a health provider in the 2 weeks before the survey, a proxy for health access and diarrhoea is leading cause of mortality.
     <a href="https://www.statista.com/statistics/643462/leading-causes-of-death-among-children-india/">Statista- Causes of Death of Children India</a><br>
 o	ϵi: Error term representing unobserved random factors.<br><br>
 <b>Coefficients:</b>β_0, β_1, β_2, β_3, β_4, β_5, β_6 are parameters to be estimated, representing the relationship between each independent variable and the under-five mortality rate.<br><br>
@@ -120,9 +120,10 @@ Based on this regression, a trellis chart is created which depicts the regressio
             
             <div class="chart-description">
           <p><b>Interpretation: Idea of 'Aspirational States'</b><br>
-        Using data from the NFHS 5 (2019-21), the two charts show the wide variations in under-five mortality rates across different states with southern states like Kerala having lower mortality rates while northern states such as Uttar Pradesh and Bihar having above national average mortality.
-          Specifically, it can be seen that a <b>class of 'aspirational states' exist - Bihar, Uttar Pradesh, Madhya Pradesh, Gujarat, Jharkhand and union territories of Dadra and Nagar Haveli and Daman and Diu</b> which are progressing rapidly but are also 'low-hanging fruits' from a policy perspective.
-          <br>The state of Meghalaya is an <b>outlier</b> in stunting which is unusual as it does relatively better in other indicators and this needs to be examined more thoroughly in future.</p>
+Using NFHS 5 (2019-21) data, the charts highlight wide variations in under-five mortality rates, with Kerala having lower rates and states like Uttar Pradesh and Bihar exceeding the national average.<br>
+A <b>class of 'aspirational states'</b>—Bihar, Uttar Pradesh, Madhya Pradesh, Gujarat, Jharkhand, and union territories like Dadra and Nagar Haveli and Daman and Diu—are rapidly progressing yet remain behind key policy targets.<br>
+The state of Meghalaya is an <b>outlier</b> in stunting while performing better in other indicators, warranting further investigation.</p>
+
             </section>  
             
           <section>
@@ -148,20 +149,20 @@ Based on this regression, a trellis chart is created which depicts the regressio
      <section>
             <div class="chart-description">   
             <h2>Part VI: Conclusion </h2>
-     <h3>Summary of Findings</h3>    
-    <p> The key findings can be summarized as follows:<br>
-     1. Women's education and health plays a pivotal role in reducing under-five mortality rates.
-     2. Improved sanitation through government intervnetions emerges as a critical determinant, directly reducing exposure to diseases (by curbing tropical enteropathy).<br>
-     3. Stunted children are apparently more vulnerable to mortality triggered by other causes such as life-threatening diseases as it was a statistically signifcant predictor in the regression model. <br>
-     4. Regional disparities in access to sanitation coverage and nutrition outcomes exist in India in the form of a class of 'aspirational states' which aspire to reach upto national average.<br>  <br></p>
+    <h3>Summary of Findings</h3>
+<p>
+1. Women’s education and health reduce under-five mortality.<br>
+2. Improved sanitation reduces disease exposure, addressing tropical enteropathy and improves child survival.<br>
+3. Stunted children are at higher risk of disease-related mortality.<br>
+4. Disparities exist in sanitation and nutrition, with 'aspirational states' like UP, Bihar, and MP lagging behind.<br><br></p>
 
-    <h3>Policy Recommendations</h3>
-<p>To achieve the Sustainable Development Goals (SDGs) on child health and sanitation, India should prioritize multi-sectoral strategies: <br> 
-<b>First,</b> scaling up public investments in women’s education, particularly in 'aspirational states' like UP, Bihar, Madhya Pradesh etc. can yield an inter-generational long-term health dividend for children.<br> 
-<b>Second,</b> sanitation programs should focus on improving quality of toilets (individual private houhehold toilets and adequate liquid and solid waste management at community level) and behavioral change in regions lagging behind, will have direct and immediate benefits.<br> 
-<b>Thirdly,</b> strengthening maternal health programs to address undernutrition among women and implementing community-based nutrition interventions targeting stunting among children can significantly improve child survival outcomes.<br>
-Through such integrated efforts, India can make substantial progress toward achieving SDG targets on reducing child malnutrition, mortality, and improving access to sanitation by 2030.
-        </p>
+<h3>Policy Recommendations</h3>
+<p>To meet SDGs on child health and sanitation, India should:<br>
+<b>First,</b> boost women’s education, especially in aspirational states.<br>
+<b>Second,</b> enhance sanitation quality, waste management, and behavioral change.<br>
+<b>Thirdly,</b> strengthen maternal health and implement community nutrition programs to reduce stunting.<br>
+Integrated strategies can significantly improve malnutrition, mortality, and sanitation outcomes by 2030.</p>
+
             
         </section>
 
