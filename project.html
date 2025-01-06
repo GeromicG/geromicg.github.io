@@ -41,7 +41,7 @@
             <div class="chart-description">
                 <h2>Part II: Relationship between Child Malnutrition & Access to Sanitation in India</h2>
 
-    <p><b>Analytical Framework:</b>  Using NFHS-5 (2019-21) state-wise data, bubble correlation charts (population-adjusted) and correlation analysis explore the relationship between child malnutrition variables and access to sanitation. 
+    <p><b>Analytical Framework:</b>  Used NFHS-5 (2019-21) state-wise data. Bubble correlation charts (population-adjusted) and correlation analysis explore the relationship between child malnutrition variables and access to sanitation. 
     Filtering the NFHS 5 dataset & estimating correlation - <a href="https://colab.research.google.com/drive/1SE6Icraj3Idix65jb5pegqKlF9DVhgqE?usp=sharing">Google CoLab Project Data Analysis Notebook</a></p>
             </div>
             <center><figure id="Location1"></figure></center>
@@ -64,14 +64,14 @@
                 <p> Simple linear regression model is contructed:
                 <center>U5MR_i = β_0 + β_1(Women with 10+ years of schooling_i) + β_2(Improved sanitation facility_i)+ β_3(Below normal BMI Women_i) + β_4(Stunted_i) + β_5(Wasted_i) + β_6(Underweight_i) +  β_7(Children with diarrhoea taken to a health facility_i) + ϵ_i</center><br><br>
    <b>Dependent Variable:</b> U5MR_i: Under-five mortality rate for state_i, defined as deaths per 1000 live births for children under 5.<br>
-<b>Independent Variables for state_i:</b>Women’s education, sanitation, maternal health (BMI), stunted, wasted, underweight children, and diarrhoea care access (proxy for health access and diarrhoea is 3rd leading cause of child mortality.
+<b>Independent Variables for state_i:</b>Women’s education, sanitation, maternal health (below normal BMI), % of stunted, wasted, underweight children; and diarrhoea care access (proxy for health access and diarrhoea is 3rd leading cause of child mortality.
 <a href="https://www.statista.com/statistics/643462/leading-causes-of-death-among-children-india/">Statista- Causes of Death of Children India</a><br>
 
 <b>Coefficients:</b>β_0, β_1, β_2, β_3, β_4, β_5, β_6 are parameters to be estimated.<br><br>
 
 <b>Assumptions:</b>Linear relationship. Errors are independently and identically distributed. <br><br>
 
-<p><b>Analytical Framework:</b> Simple OLS regression of the filtered NFHS 5 dataset and estimating the coefficients - <a href="https://colab.research.google.com/drive/1JsxaxJvW9_-m5USM0_YIZ_0engWJrA8y?usp=sharing">Google CoLab Project Data Analysis Notebook</a>
+<p><b>Analytical Framework:</b> Simple OLS regression of the filtered NFHS 5 dataset and estimating the coefficients - <a href="https://colab.research.google.com/drive/1JsxaxJvW9_-m5USM0_YIZ_0engWJrA8y?usp=sharing">Google CoLab Project Data Analysis Notebook</a> (OpenAI, 2025).
 Based on this regression, a trellis chart is created which depicts the regression of U5MR for state_i on independent variables that represent indicators of sanitation, child health, women's education and health. </p>
                 
             </div>
@@ -82,12 +82,12 @@ Based on this regression, a trellis chart is created which depicts the regressio
 <div class="chart-description">
 <p><b>Interpretation:</b><br>
 <b>R-squared (0.731):</b> 73.1% of the variability in under-five mortality is explained by the model, indicating a good fit.<br>
-<b>Significant Estimates:</b> Four variables are significant at the 10% level (small sample size), on average:<br>
+<b>Significant Estimates:</b> Four variables are significant at the 10% level (due to small sample size), on average:<br>
 <b>- Women (15-49) with 10+ years of schooling (%): β_1 = -0.3311</b> Higher female education associated with reduced under-five mortality.<br>
 <b>- Improved sanitation (%): β_2 = -0.2611</b> Greater access to sanitation associated with lower under-five mortality.<br>
 <b>- Women with BMI <18.5 (%): β_3 = 1.3275</b> Poor maternal nutrition associated with increased under-five mortality.<br>
 <b>- Stunted children (%): β_4 = 1.0098</b> Higher stunting rates associated with increased under-five mortality.<br>
-<p><b>Limitations:</b> Omitted variable bias and lack of state-specific or time-invariant fixed effects..</p>
+<p><b>Limitations:</b> Omitted variable bias and lack of state-specific or time-invariant fixed effects.</p>
 
 </div></section>
         
