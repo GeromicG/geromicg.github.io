@@ -179,11 +179,29 @@ figcaption {
     text-decoration: underline;
   }
 
-  @media (max-width: 768px) {
-    section {
-      margin: 1rem;
+.chart-wrapper {
+    width: 100%;
+    padding: 1rem;
+    background: var(--section-bg-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: min(100%, 800px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        width: calc(100% - 2rem);
+        margin: 0 1rem;
     }
-    
+}
+   
     .header {
       text-align: center;
     }
