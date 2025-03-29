@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Exchange Rate Index for India and Brazil (2020-2025)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/PP404/DEXINUS.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "observation_date": "date:%d-%m-%Y"
+      }
+    }
+  },
+  "transform": [
+    {"filter": "datum.observation_date != null"},
+    {"calculate": "datum.DEXINUS / 76.29 * 100", "as": "IndiaExchangeRate_Index"},
+    {"calculate": "datum.DEXBZUS / 5.1286 * 100", "as": "BrazilExchangeRate_Index"},
+    {"fold": ["IndiaExchangeRate_Index", "BrazilExchangeRate_Index"], "as": ["series", "value"]}
+  ],
+  "title": {
+    "text": "Exchange Rate Index: India and Brazil (2020-2025)",
+    "subtitle": ["Base Year: 2020, Source: Federal Reserve Economic Data (FRED)", ""],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": "container",
+  "height": 300,
+  "mark": {
+    "type": "line",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "observation_date",
+      "type": "temporal",
+      "axis": {
+        "grid": false,
+        "formatType": "time",
+        "format": "%d-%m-%Y"
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Exchange Rate Index (Base: 2020 = 100)"
+    },
+    "color": {
+      "field": "series",
+      "type": "nominal",
+      "title": "Series",
+      "scale": {
+        "domain": ["IndiaExchangeRate_Index", "BrazilExchangeRate_Index"],
+        "range": ["#002fa7", "green"]
+      },
+      "legend": {
+        "orient": "right",
+        "labelExpr": "datum.label === 'IndiaExchangeRate_Index' ? 'India' : 'Brazil'"
+      }
+    }
+  },
+  "config": {
+    "view": {
+      "continuousWidth": 500,
+      "continuousHeight": 300
+    },
+    "legend": {
+      "labelFontSize": 10,
+      "symbolSize": 100,
+      "offset": 20
+    }
+  }
+}
