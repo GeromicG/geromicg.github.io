@@ -3,7 +3,7 @@
 <head>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="test.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Geromic George - Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -26,19 +26,25 @@
     <main class="container">
         <section>
             <div class="chart-description">
-                <h2>Exchange Rate Index: India and Brazil (2020-2025)</h2>
-                <p>This chart displays the exchange rate index trends for India and Brazil with a base year of 2020.</p>
+                <h2>Coding Challenge 1: Hosting </h2>
+                <p>A new portfolio page was created on GitHub and two charts have been displayed for this coding challenge.</p>
             </div>
-            <div class="chart-container">
-                <figure class="chart" id="exchangeRateChart"></figure>
-            </div>
-            <figcaption>Exchange Rate Index for India and Brazil (2020-2025)</figcaption>
+            <figure id="Location1"></figure>
+            <figcaption>Chart 1: Relationship between GDP and Life Expectancy (WEEK 1)</figcaption> 
+            <figure id="Location2"></figure>
+            <figcaption>Chart 2: Relationship Between Ethereum Price and Volume (WEEK 1)</figcaption>
         </section>
     </main>
 
     <script>
-        let exchangeRateSpec = "exchange_rate_chart.json"; // JSON file containing Vega-Lite spec
-        vegaEmbed('#exchangeRateChart', exchangeRateSpec).then(result => {}).catch(console.error);
+        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json";
+        let figure_2_spec = "exchange_rate_chart.json";
+        
+        vegaEmbed('#Location1', figure_1_spec)
+            .catch(error => console.error(error));
+            
+        vegaEmbed('#Location2', figure_2_spec)
+            .catch(error => console.error(error));
     </script>
 </body>
 </html>
