@@ -61,41 +61,48 @@ h2 {
     color: var(--primary-color);
 }
 
-h3 {
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
-}
-
-p {
-    margin-bottom: 1.5rem;
-    max-width: 1100px;
-}
-
-section {
-    padding: clamp(2rem, 5vw, 4rem) 0;
-    background-color: var(--section-bg-color);
-    border-radius: var(--radius-lg);
-    margin-bottom: 2rem;
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(61, 61, 63, 0.1);
-    max-width: 97%;
-}
-
-.chart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.chart {
+figure {
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
+}
+
+#chartGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
 }
 
 @media (max-width: 768px) {
-    .chart {
-        width: 100%;
-        max-width: 100%;
+    section {
+        margin: 1rem;
+    }
+    
+    .header {
+        text-align: center;
+    }
+    
+    .header a {
+        display: inline-block;
+        margin: 0.5rem;
+    }
+    
+    figure {
+        margin: 0.5rem 0;
+        padding: 0.25rem;
+    }
+    
+    figcaption {
+        font-size: 0.8rem;
     }
 }
+
+/* Rest of your existing CSS remains unchanged below */
+/* ... [keep all other existing CSS rules] ... */
