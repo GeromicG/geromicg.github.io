@@ -85,7 +85,7 @@
             "range": ["#002fa7", "green"]
           },
           "legend": {
-            "orient": "bottom-left",
+            "orient": "right",
             "labelExpr": "datum.label === 'IndiaExchangeRate_Index' ? 'India' : 'Brazil'"
           }
         },
