@@ -48,7 +48,7 @@
       "title": "Category",
       "scale": {
         "domain": ["MFN Simple Average", "MFN Trade Weighted Average", "MFN Duty Free Percent"],
-        "range": ["#4e79a7", "#f28e2b", "#e15759"]  // Contrasting shades: blue, orange, red
+        "range": ["#4e79a7", "#f28e2b", "#e15759"] 
       }
     },
     "tooltip": [
