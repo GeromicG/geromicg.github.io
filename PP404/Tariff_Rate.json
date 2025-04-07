@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "MFN Tariff Rates Analysis of India vs Peers (2023)",
-    "subtitle": "Source: WTO. Indicators: Simple Average Tariff Rate, Trade Weighted Average Tariff Rate, and Duty-Free Percent by Country",
+    "text": "MFN Tariff Rates Comparison of India vs Peers (2023)",
+    "subtitle": "Source: World Trade Organization",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 12,
     "anchor": "start",
@@ -26,7 +26,10 @@
       "field": "Country",
       "type": "nominal",
       "title": "Country",
-      "axis": {"labelAngle": 0}
+      "axis": {
+        "labelAngle": 0,
+        "titleFontSize": 12 
+      }
     },
     "xOffset": {
       "field": "Indicator",
@@ -40,15 +43,23 @@
       "field": "Value",
       "type": "quantitative",
       "title": "Tariff Rate (%)",
+      "axis": {
+        "titleFontSize": 12 
+      },
       "scale": {"domain": [0, 50]}
     },
     "color": {
       "field": "Indicator",
       "type": "nominal",
-      "title": "Category",
+      "title": "Tariff Rates & Duty Free %",
       "scale": {
         "domain": ["MFN Simple Average", "MFN Trade Weighted Average", "MFN Duty Free Percent"],
         "range": ["#4e79a7", "#f28e2b", "#e15759"] 
+      },
+      "legend": {
+        "orient": "top",
+        "titleFontSize": 12,
+        "labelFontSize": 10
       }
     },
     "tooltip": [
