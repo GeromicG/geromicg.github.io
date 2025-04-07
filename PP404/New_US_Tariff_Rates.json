@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Post 'Liberation Day - 2nd April, 2025' US Tariff Rates vs Goods Trade Deficit as a Proportion of Imports",
-    "subtitle": ["Source:U.S. Bureau of Economic Analysis, Circle size proportional to total value of imports"],
+    "text": "Post 'Liberation Day - 2nd April, 2025' US Tariff Rates vs Goods Trade Deficit as a Proportion of US Imports",
+    "subtitle": ["Source:U.S. Bureau of Economic Analysis, Circle size proportional to total value of US imports"],
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "anchor": "start",
@@ -35,7 +35,7 @@
         "x": {
           "field": "Imports-Exports/Imports %",
           "type": "quantitative",
-          "title": "Trade Deficit as % of Imports",
+          "title": "Trade Deficit as % of US Imports from Country",
           "scale": {"domain": [-20, 100]},
           "axis": {"grid": false}
         },
