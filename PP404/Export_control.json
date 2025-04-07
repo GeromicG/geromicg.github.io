@@ -84,6 +84,7 @@
           "timeUnit": "year",
           "title": "Year",
           "axis": {
+            "titleFontSize": 12, 
             "grid": false,
             "format": "%Y"
           }
@@ -91,7 +92,10 @@
         "y": {
           "field": "Rice Exports",
           "type": "quantitative",
-          "title": "Milled Rice Exports (1000 MT)"
+          "title": "Milled Rice Exports (1000 MT)",
+          "axis": {
+            "titleFontSize": 12, 
+          }
         },
         "color": {
           "field": "Country",
