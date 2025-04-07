@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "MFN Tariff Rates Analysis of India vs Peers (2023)",
+    "subtitle": "Source: WTO. Indicators: Simple Average Tariff Rate, Trade Weighted Average Tariff Rate, and Duty-Free Percent by Country",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "color": "black",
+    "fontSize": 16,
+    "offset": 10
+  },
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/PP404/Tariff_MFN_2023.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 5,
+    "cornerRadiusTopRight": 5
+  },
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "title": "Country",
+      "axis": {"labelAngle": 0}
+    },
+    "xOffset": {
+      "field": "Indicator",
+      "type": "nominal",
+      "title": null,
+      "scale": {
+        "domain": ["MFN Simple Average", "MFN Trade Weighted Average", "MFN Duty Free Percent"]
+      }
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": "Tariff Rate (%)",
+      "scale": {"domain": [0, 50]}
+    },
+    "color": {
+      "field": "Indicator",
+      "type": "nominal",
+      "title": "Category",
+      "scale": {
+        "domain": ["MFN Simple Average", "MFN Trade Weighted Average", "MFN Duty Free Percent"],
+        "range": ["#4e79a7", "#f28e2b", "#e15759"]  // Contrasting shades: blue, orange, red
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Indicator", "type": "nominal", "title": "Indicator"},
+      {"field": "Value", "type": "quantitative", "title": "Tariff Rate (%)", "format": ".1f"}
+    ]
+  }
+}
