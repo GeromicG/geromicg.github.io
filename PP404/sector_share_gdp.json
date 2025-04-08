@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Sectoral Share of India's GDP (2010-2024)",
+    "subtitle": "Source: Economic Survey of India",
+    "subtitleFontStyle": "italic",
+    "anchor": "start"  
+  },
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/GeromicG/geromicg.github.io/refs/heads/main/PP404/Sector_share_GDP.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "fold": ["Agriculture", "Industry", "Manufacturing", "Services"],
+      "as": ["Sector", "Percentage Share"]
+    },
+    {
+      "calculate": "datum.Sector == 'Agriculture' ? 'Agriculture & Allied Services' : datum.Sector == 'Industry' ? 'Industry minus Manufacturing' : datum.Sector",
+      "as": "Sector"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 6
+  },
+  "encoding": {
+    "x": {
+      "field": "Financial Year",
+      "type": "ordinal",
+      "title": "Financial Year"
+    },
+    "y": {
+      "field": "Percentage Share",
+      "type": "quantitative",
+      "title": "Percentage Share in GDP"
+    },
+    "color": {
+      "field": "Sector",
+      "type": "nominal",
+      "title": "Sector",
+      "scale": {
+        "domain": ["Agriculture & Allied Services", "Industry minus Manufacturing", "Manufacturing", "Services"],
+        "range": ["#2E8B57", "#FF4500", "#003366", "#ADD8E6"]
+      }
+    },
+    "tooltip": [
+      {"field": "Sector", "type": "nominal", "title": "Sector"},
+      {"field": "Financial Year", "type": "ordinal", "title": "Financial Year"},
+      {"field": "Percentage Share", "type": "quantitative", "title": "Percentage Share in GDP"}
+    ]
+  },
+  "config": {
+    "legend": {
+      "orient": "right",
+      "title": null,  
+      "align": "center" 
+    }
+  }
+}
