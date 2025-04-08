@@ -4,7 +4,11 @@
     "text": "Sectoral Share of India's GDP (2010-2024)",
     "subtitle": "Source: Economic Survey of India",
     "subtitleFontStyle": "italic",
-    "anchor": "start"  
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "color": "black",
+    "fontSize": 16,
+    "offset": 10  
   },
   "width": 600,
   "height": 400,
