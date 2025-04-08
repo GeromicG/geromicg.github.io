@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "India’s Import of VSF: Tariff Barriers and Non-Tariff Barriers",
-  "width": 600,
+  "width": 650,
   "height": 400,
   "padding": 10,
   "title": {
@@ -22,8 +22,9 @@
         "strokeWidth": 3,
         "point": {
           "filled": true,
-          "fill": "#003399",
-          "size": 50
+          "size": 50,
+          "strokeWidth": 1.5,
+           "stroke": "white"
         },
         "stroke": "#003399"
       },
