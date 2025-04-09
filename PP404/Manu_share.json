@@ -164,7 +164,9 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 50
+         "size": 80,
+         "strokeWidth": 1.5,
+         "stroke": "white"
       }
     }
   ],
