@@ -8,7 +8,7 @@
     "anchor": "start",
     "color": "black",
     "fontSize": 16,
-    "offset": 10  
+    "offset": 10
   },
   "width": 600,
   "height": 400,
@@ -24,43 +24,82 @@
     {
       "calculate": "datum.Sector == 'Agriculture' ? 'Agriculture & Allied Services' : datum.Sector == 'Industry' ? 'Industry minus Manufacturing' : datum.Sector",
       "as": "Sector"
+    },
+    {
+      "calculate": "datum.Sector == 'Agriculture & Allied Services' ? 1 : datum.Sector == 'Industry minus Manufacturing' ? 2 : datum.Sector == 'Manufacturing' ? 3 : 4",
+      "as": "SortOrder"
     }
   ],
-  "mark": {
-    "type": "bar",
-    "cornerRadiusEnd": 6
-  },
-  "encoding": {
-    "x": {
-      "field": "Financial Year",
-      "type": "ordinal",
-      "title": "Financial Year"
-    },
-    "y": {
-      "field": "Percentage Share",
-      "type": "quantitative",
-      "title": "Percentage Share in GDP"
-    },
-    "color": {
-      "field": "Sector",
-      "type": "nominal",
-      "title": "Sector",
-      "scale": {
-        "domain": ["Agriculture & Allied Services", "Industry minus Manufacturing", "Manufacturing", "Services"],
-        "range": ["#2E8B57", "#FF4500", "#003366", "#ADD8E6"]
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 6
+      },
+      "encoding": {
+        "x": {
+          "field": "Financial Year",
+          "type": "ordinal",
+          "title": "Financial Year"
+        },
+        "y": {
+          "field": "Percentage Share",
+          "type": "quantitative",
+          "title": "Percentage Share in GDP",
+          "stack": "zero"
+        },
+        "color": {
+          "field": "Sector",
+          "type": "nominal",
+          "title": "Sector",
+          "scale": {
+            "domain": ["Agriculture & Allied Services", "Industry minus Manufacturing", "Manufacturing", "Services"],
+            "range": ["#2E8B57", "#FF4500", "#003366", "#800000"]
+          }
+        },
+        "order": {
+          "field": "SortOrder",
+          "type": "quantitative"
+        }
       }
     },
-    "tooltip": [
-      {"field": "Sector", "type": "nominal", "title": "Sector"},
-      {"field": "Financial Year", "type": "ordinal", "title": "Financial Year"},
-      {"field": "Percentage Share", "type": "quantitative", "title": "Percentage Share in GDP"}
-    ]
-  },
+    {
+      "transform": [
+        {
+          "window": [{"op": "sum", "field": "Percentage Share", "as": "TotalPercentage"}],
+          "frame": [null, null],
+          "groupby": ["Financial Year"]
+        },
+        {
+          "window": [{"op": "sum", "field": "Percentage Share", "as": "CumulativeSum"}],
+          "frame": [null, 0],
+          "groupby": ["Financial Year"]
+        },
+        {
+          "calculate": "datum.CumulativeSum - datum['Percentage Share']/2",
+          "as": "MiddlePosition"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "color": "white",
+        "fontSize": 10,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Financial Year", "type": "ordinal"},
+        "y": {"field": "MiddlePosition", "type": "quantitative"},
+        "text": {"field": "Percentage Share", "type": "quantitative", "format": ".1f"}
+      }
+    }
+  ],
   "config": {
     "legend": {
       "orient": "right",
-      "title": null,  
-      "align": "center" 
+      "title": null,
+      "align": "center"
     }
   }
 }
