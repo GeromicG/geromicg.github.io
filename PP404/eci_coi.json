@@ -1,6 +1,6 @@
 {
 
-  "$schema": https://vega.github.io/schema/vega-lite/v5.json,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "description": "ECI vs COI Comparison for India and Peers",
 
