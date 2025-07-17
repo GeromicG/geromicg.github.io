@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "GDP vs Life Expectancy",
+    "subtitle": "Relationship between GDP per capita and life expectancy",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/gapminder-health-income.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.income != null && datum.health != null && datum.income > 0 && datum.health > 0"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "size": 60,
+    "opacity": 0.7
+  },
+  "encoding": {
+    "x": {
+      "field": "income",
+      "type": "quantitative",
+      "title": "GDP per capita",
+      "scale": {
+        "type": "log",
+        "base": 10,
+        "domain": [100, 100000]
+      },
+      "axis": {
+        "grid": false,
+        "format": ",.0f"
+      }
+    },
+    "y": {
+      "field": "health",
+      "type": "quantitative",
+      "title": "Life Expectancy",
+      "scale": {
+        "domain": [40, 90]
+      },
+      "axis": {
+        "grid": false,
+        "format": ".1f"
+      }
+    },
+    "color": {
+      "field": "region",
+      "type": "nominal",
+      "title": "Region",
+      "scale": {
+        "range": ["#269ccc", "#ff4444", "#22c55e", "#f59e0b", "#8b5cf6", "#ec4899"]
+      }
+    },
+    "tooltip": [
+      {"field": "country", "type": "nominal", "title": "Country"},
+      {"field": "income", "type": "quantitative", "format": ",.0f", "title": "GDP per capita"},
+      {"field": "health", "type": "quantitative", "format": ".1f", "title": "Life Expectancy"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"grid": false}
+  }
+}
