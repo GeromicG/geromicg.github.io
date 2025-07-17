@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Ether: Price vs Volume",
+    "subtitle": "Daily ETH price and volume traded",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/crypto/dataETH.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "title": null,
+      "type": "temporal"
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2,
+        "color": "#ff4444"
+      },
+      "encoding": {
+        "y": {
+          "field": "Volume",
+          "type": "quantitative",
+          "axis": {
+            "grid": false,
+            "labelColor": "red",
+            "format": ",.0f",
+            "title": "Volume"
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2,
+        "color": "#269ccc"
+      },
+      "encoding": {
+        "y": {
+          "field": "Price",
+          "type": "quantitative",
+          "axis": {
+            "grid": false,
+            "labelColor": "blue",
+            "format": "$,.0f",
+            "title": "Price"
+          }
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}},
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"grid": false}
+  }
+}
