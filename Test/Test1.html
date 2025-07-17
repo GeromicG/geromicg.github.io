@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geromic George - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Portfolio</h1><br>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="https://www.linkedin.com/in/geromic-george-62955b33">LinkedIn</a> | 
+                <a href="https://github.com/GeromicG">GitHub</a> | 
+                <a href="project.html">Project</a><br><br>
+                This page acts as my portfolio of charts for the PP434: Automated Data Visualisation for Policymaking course.
+            </p>
+        </div>
+    </div>
+    
+    <main class="container">
+        <section>
+            <div class="chart-description">
+                <h2>Coding Challenge 1: Hosting</h2>
+                <p>A new portfolio page was created on GitHub and two charts have been displayed for this coding challenge.</p>
+            </div>
+            
+            <div class="chart-container" id="Location1"></div>
+            <figcaption>Chart 1: Relationship between GDP and Life Expectancy (WEEK 1)</figcaption>
+            
+            <div class="chart-container" id="Location2"></div>
+            <figcaption>Chart 2: Relationship Between Ethereum Price and Volume (WEEK 1)</figcaption>
+        </section>
+    </main>
+
+    <script>
+        // Function to check if Vega libraries are loaded
+        function waitForVega() {
+            return new Promise((resolve) => {
+                if (typeof vegaEmbed !== 'undefined') {
+                    resolve();
+                } else {
+                    setTimeout(() => waitForVega().then(resolve), 100);
+                }
+            });
+        }
+
+        // Function to embed charts with responsive configuration
+        function embedResponsiveChart(elementId, specUrl) {
+            return fetch(specUrl)
+                .then(response => response.json())
+                .then(spec => {
+                    const responsiveSpec = {
+                        ...spec,
+                        width: "container",
+                        autosize: {
+                            type: "fit",
+                            contains: "padding"
+                        }
+                    };
+
+                    return vegaEmbed(elementId, responsiveSpec, {
+                        actions: false,
+                        renderer: 'svg',
+                        config: {
+                            background: 'transparent'
+                        }
+                    });
+                })
+                .then(result => {
+                    // Make chart responsive
+                    const container = document.querySelector(elementId);
+                    if (typeof ResizeObserver !== 'undefined') {
+                        const resizeObserver = new ResizeObserver(entries => {
+                            result.view.resize().runAsync();
+                        });
+                        resizeObserver.observe(container);
+                    }
+                    return result;
+                })
+                .catch(error => {
+                    console.error('Error embedding chart:', error);
+                    document.querySelector(elementId).innerHTML = '<p>Error loading chart. Please refresh the page.</p>';
+                });
+        }
+
+        // Initialize charts after everything loads
+        async function initializeCharts() {
+            try {
+                // Wait for Vega libraries to load
+                await waitForVega();
+                
+                // Embed both charts
+                await embedResponsiveChart('#Location1', 'chart1.json');
+                await embedResponsiveChart('#Location2', 'chart2.json');
+                
+                console.log('Charts loaded successfully');
+            } catch (error) {
+                console.error('Error initializing charts:', error);
+            }
+        }
+
+        // Start initialization when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeCharts);
+        } else {
+            initializeCharts();
+        }
+
+        // Handle window resize with debouncing
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(async () => {
+                if (typeof vegaEmbed !== 'undefined') {
+                    await embedResponsiveChart('#Location1', 'chart1.json');
+                    await embedResponsiveChart('#Location2', 'chart2.json');
+                }
+            }, 300);
+        });
+    </script>
+</body>
+</html>
